@@ -38,7 +38,7 @@
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
-                <strong>GREEN BOX - CHUYÊN HỘP GẤP GỌN - TIẾT KIỆM DIỆN TÍCH - TỐI ƯU CHI PHÍ - VẬN CHUYỂN DỄ DÀNG - BÁN SẴN VÀ NHẬN ĐẶT HÀNG THEO YÊU CẦU</strong>
+                <strong>{{ site.top_text }}</strong>
             </div>
             <div class="top-bar-right">
                 <!-- AI Translate Widget -->
@@ -50,9 +50,9 @@
                 </script>
                 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-                <a href="https://facebook.com/greenbox.vn" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="mailto:contact@greenbox.vn"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+84916260699"><i class="fas fa-phone"></i></a>
+                <a href="{{ site.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i></a>
+                <a href="tel:{{ site.hotline }}"><i class="fas fa-phone"></i></a>
             </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
         <div class="container">
             <div class="header-main">
                 <a href="/" class="logo">
-                    <img loading="lazy" src="/assets/logo.png" alt="Green Box Logo">
+                    <img loading="lazy" src="{{ site.logo }}" alt="Green Box Logo">
                 </a>
 
                 <nav class="nav-links" id="nav-links">
@@ -219,16 +219,16 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <img loading="lazy" src="/assets/logo.png" alt="Green Box" style="height: 50px; margin-bottom: 1rem; filter: brightness(0) invert(1);">
+                    <img loading="lazy" src="{{ site.logo }}" alt="Green Box Logo">
                     <p>Green Box tự hào là đơn vị tiên phong trong lĩnh vực in ấn và bao bì xanh, mang đến các giải pháp chất lượng cao và bền vững.</p>
                 </div>
                 <div class="footer-col">
                     <h3>Liên Hệ</h3>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> <strong>VP:</strong> 12/23/214 Nguyễn Xiển, Thanh Liệt, Hà Nội</li>
-                        <li><i class="fas fa-industry"></i> <strong>Nhà Máy:</strong> KCN Thạch Thất - Quốc Oai, Xã Tây Phương, Hanoi, Vietnam, 100000</li>
+                        <li><i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 10px;"></i> <strong>VP:</strong> {{ site.address_office }}</li>
+                        <li><i class="fas fa-industry" style="color: var(--accent); margin-right: 10px;"></i> <strong>Nhà Máy:</strong> {{ site.address_factory }}</li>
                         <li><i class="fas fa-phone"></i> 0916.260.699</li>
-                        <li><i class="fas fa-envelope"></i> contact@greenbox.vn</li>
+                        <li><i class="fas fa-envelope" style="color: var(--accent); margin-right: 10px;"></i> {{ site.email }}</li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -263,7 +263,7 @@
         <a href="https://zalo.me/0916260699" target="_blank" style="width: 60px; height: 60px; background-color: #0068FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
             <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1200px-Icon_of_Zalo.svg.png" alt="Zalo" style="width: 35px; height: 35px;">
         </a>
-        <a href="tel:0916260699" style="width: 60px; height: 60px; background-color: #28a745; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-size: 1.8rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <a href="tel:{{ site.hotline }}" style="width: 60px; height: 60px; background-color: #28a745; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-size: 1.8rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
             <i class="fas fa-phone-alt"></i>
         </a>
     </div>

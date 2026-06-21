@@ -9,6 +9,19 @@ collections:
   - name: "pages"
     label: "Trang Tĩnh"
     files:
+      - label: "Cấu Hình Chung (Global)"
+        name: "settings"
+        file: "src/_data/site.json"
+        fields:
+          - {label: "Đường dẫn Logo", name: "logo", widget: "image"}
+          - {label: "Dòng chữ trên cùng (Slogan top)", name: "top_text", widget: "string"}
+          - {label: "Tên công ty", name: "company_name", widget: "string"}
+          - {label: "Hotline", name: "hotline", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Link Facebook", name: "facebook", widget: "string"}
+          - {label: "Địa chỉ Văn Phòng", name: "address_office", widget: "string"}
+          - {label: "Địa chỉ Nhà Máy", name: "address_factory", widget: "string"}
+          - {label: "Mô tả ở chân trang", name: "footer_desc", widget: "text"}
       - label: "Trang Chủ"
         name: "home"
         file: "src/index.html"
@@ -18,17 +31,46 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - {label: "Tiêu đề lớn (Tên thương hiệu)", name: "title", widget: "string"}
-              - {label: "Tiêu đề phụ (Slogan)", name: "subtitle", widget: "string"}
+              - {label: "Tiêu đề lớn", name: "title", widget: "string"}
+              - {label: "Tiêu đề phụ", name: "subtitle", widget: "string"}
               - {label: "Đoạn văn mô tả", name: "description", widget: "text"}
               - {label: "Chữ trên nút bấm", name: "button_text", widget: "string"}
               - {label: "Đường dẫn nút bấm", name: "button_link", widget: "string"}
-          - label: "Mục 2: Vì sao chọn Green Box"
+          - label: "Vì sao chọn Green Box"
             name: "features"
             widget: "object"
             fields:
-              - {label: "Tiêu đề mục", name: "title", widget: "string"}
-              - {label: "Mô tả mục", name: "subtitle", widget: "text"}
+              - {label: "Tiêu đề", name: "title", widget: "string"}
+              - {label: "Mô tả", name: "subtitle", widget: "text"}
+              - label: "Các lý do"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Tiêu đề lý do", name: "title", widget: "string"}
+                  - {label: "Icon (Mã FontAwesome, vd: fas fa-truck)", name: "icon", widget: "string"}
+          - label: "Thông tin Nhà Máy"
+            name: "factory"
+            widget: "object"
+            fields:
+              - {label: "Tiêu đề", name: "title", widget: "string"}
+              - {label: "Mô tả", name: "subtitle", widget: "text"}
+              - label: "Các chỉ số"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Con số (vd: 5000+)", name: "value", widget: "string"}
+                  - {label: "Đơn vị/Ý nghĩa (vd: m2 Quy mô)", name: "label", widget: "string"}
+          - label: "Quy trình hợp tác"
+            name: "process"
+            widget: "object"
+            fields:
+              - {label: "Tiêu đề", name: "title", widget: "string"}
+              - label: "Các bước"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - {label: "Tên bước", name: "title", widget: "string"}
+                  - {label: "Mô tả", name: "desc", widget: "string"}
       - label: "Giới Thiệu"
         name: "about"
         file: "src/about.html"

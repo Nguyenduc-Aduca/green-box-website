@@ -1,16 +1,51 @@
 ---
+templateEngineOverride: njk, md
 layout: base.njk
 hero:
   title: "GREEN BOX"
   subtitle: "CÔNG NGHỆ TRONG TỪNG NẾP GẤP"
   description: "Giải pháp bao bì gấp gọn thông minh giúp doanh nghiệp tiết kiệm chi phí vận chuyển, tối ưu kho bãi và nâng tầm giá trị thương hiệu."
   button_text: "NHẬN BÁO GIÁ NGAY"
-  button_link: "pricing.html"
+  button_link: "/pricing/"
 features:
   title: "VÌ SAO CHỌN GREEN BOX"
   subtitle: "Chúng tôi mang đến những giải pháp đột phá, thay đổi hoàn toàn cách doanh nghiệp sử dụng bao bì."
+  items:
+    - title: "Tiết Kiệm Tới 80% Diện Tích Kho"
+      icon: "fas fa-warehouse"
+    - title: "Giảm Chi Phí Vận Chuyển"
+      icon: "fas fa-truck"
+    - title: "Thiết Kế Sang Trọng"
+      icon: "fas fa-gem"
+    - title: "Dễ Dàng Lắp Ráp"
+      icon: "fas fa-puzzle-piece"
+    - title: "Tái Sử Dụng Nhiều Lần"
+      icon: "fas fa-recycle"
+factory:
+  title: "XƯỞNG SẢN XUẤT TRỰC TIẾP TẠI HÀ NỘI"
+  subtitle: "Sản xuất khép kín từ in ấn đến gia công thành phẩm, không qua trung gian."
+  stats:
+    - value: "5000+"
+      label: "m2 Quy mô nhà xưởng"
+    - value: "20+"
+      label: "Máy móc hiện đại"
+    - value: "100+"
+      label: "Nhân sự tay nghề cao"
+    - value: "10tr+"
+      label: "Sản phẩm/năm"
+process:
+  title: "QUY TRÌNH HỢP TÁC"
+  steps:
+    - title: "Tư Vấn & Báo Giá"
+      desc: "Tiếp nhận yêu cầu và tối ưu chi phí."
+    - title: "Thiết Kế & Làm Mẫu"
+      desc: "Chốt file thiết kế và sản xuất mẫu thực tế."
+    - title: "Sản Xuất Hàng Loạt"
+      desc: "In ấn và gia công trên dây chuyền tự động."
+    - title: "Kiểm Tra & Giao Hàng"
+      desc: "KCS 100% trước khi đóng thùng và giao tận nơi."
 ---
-<!-- SECTION 1: HERO BANNER -->
+    <!-- SECTION 1: HERO BANNER -->
     <section class="hero-new">
         <div class="container">
             <h1>{{ hero.title }}</h1>
@@ -18,7 +53,7 @@ features:
             <p>{{ hero.description }}</p>
             <div class="hero-buttons">
                 <a href="{{ hero.button_link }}" class="btn-accent">{{ hero.button_text }}</a>
-                <a href="#" class="btn-outline-light">XEM MẪU SẢN PHẨM</a>
+                <a href="/designs/" class="btn-outline-light">XEM MẪU SẢN PHẨM</a>
             </div>
         </div>
     </section>
@@ -29,254 +64,48 @@ features:
             <h2 class="section-title">{{ features.title }}</h2>
             <p class="section-subtitle">{{ features.subtitle }}</p>
             <div class="features-grid">
+                {% for item in features.items %}
                 <div class="feature-card">
-                    <i class="fas fa-warehouse feature-icon"></i>
-                    <h3>Tiết Kiệm Tới 80% Diện Tích Kho</h3>
+                    <i class="{{ item.icon }} feature-icon"></i>
+                    <h3>{{ item.title }}</h3>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-truck feature-icon"></i>
-                    <h3>Giảm Chi Phí Vận Chuyển</h3>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-gem feature-icon"></i>
-                    <h3>Thiết Kế Sang Trọng</h3>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-puzzle-piece feature-icon"></i>
-                    <h3>Dễ Dàng Lắp Ráp</h3>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-recycle feature-icon"></i>
-                    <h3>Tái Sử Dụng Nhiều Lần</h3>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-pencil-ruler feature-icon"></i>
-                    <h3>Thiết Kế Theo Yêu Cầu</h3>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: SẢN PHẨM NỔI BẬT -->
-    <section class="products-section">
+    <!-- SECTION 3: NHÀ MÁY -->
+    <section class="factory-section">
         <div class="container">
-            <h2 class="section-title">SẢN PHẨM NỔI BẬT</h2>
-            <p class="section-subtitle">Khám phá các dòng sản phẩm bao bì cao cấp được thiết kế và sản xuất bởi Green Box.</p>
-            <div class="features-grid">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80" alt="Hộp Quà Trung Thu" class="product-img">
-                    <div class="product-content">
-                        <h3>Hộp Quà Trung Thu</h3>
-                        <p>Thiết kế đẳng cấp, hoa văn tinh tế, cấu trúc hộp nắp gập nam châm hoặc nắp âm dương sang trọng.</p>
-                        <a href="#" class="product-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?auto=format&fit=crop&w=600&q=80" alt="Hộp Quà Doanh Nghiệp" class="product-img">
-                    <div class="product-content">
-                        <h3>Hộp Quà Doanh Nghiệp</h3>
-                        <p>Giải pháp quà tặng khách hàng, đối tác với nhận diện thương hiệu đồng bộ, in ép kim logo nổi bật.</p>
-                        <a href="#" class="product-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&w=600&q=80" alt="Hộp Mỹ Phẩm" class="product-img">
-                    <div class="product-content">
-                        <h3>Hộp Mỹ Phẩm</h3>
-                        <p>Bao bì nhỏ gọn, bảo vệ sản phẩm tốt, thiết kế hiện đại phù hợp với ngành làm đẹp.</p>
-                        <a href="#" class="product-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1574345480373-c5a4d46c8273?auto=format&fit=crop&w=600&q=80" alt="Hộp Thực Phẩm" class="product-img">
-                    <div class="product-content">
-                        <h3>Hộp Thực Phẩm</h3>
-                        <p>Chất liệu giấy an toàn vệ sinh thực phẩm, thiết kế thu hút, phù hợp cho yến sào, trà, cafe.</p>
-                        <a href="#" class="product-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Hộp Đặc Sản" class="product-img">
-                    <div class="product-content">
-                        <h3>Hộp Đặc Sản</h3>
-                        <p>Mang đậm bản sắc vùng miền, kết hợp chất liệu Kraft mộc mạc và thiết kế truyền thống đương đại.</p>
-                        <a href="#" class="product-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=600&q=80" alt="Hộp Gấp Gọn Thông Minh" class="product-img">
-                    <div class="product-content">
-                        <h3>Hộp Gấp Gọn Thông Minh</h3>
-                        <p>Sản phẩm chủ lực của Green Box, tiết kiệm 80% thể tích, dễ dàng lắp ráp thành hộp cứng cao cấp.</p>
-                        <a href="#" class="product-link">Xem chi tiết <i class="fas fa-arrow-right"></i></a>
+            <div class="factory-content">
+                <div class="factory-text">
+                    <h2 class="section-title" style="text-align: left; color: white;">{{ factory.title }}</h2>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">{{ factory.subtitle }}</p>
+                    <div class="stats-grid">
+                        {% for stat in factory.stats %}
+                        <div class="stat-item">
+                            <div class="stat-number">{{ stat.value }}</div>
+                            <div class="stat-label">{{ stat.label }}</div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: GIẢI PHÁP CHO DOANH NGHIỆP -->
-    <section class="solution-section">
+    <!-- SECTION 4: QUY TRÌNH HỢP TÁC -->
+    <section class="process-section">
         <div class="container">
-            <div class="solution-content">
-                <div class="solution-text">
-                    <h2>TỪ MỘT CHIẾC HỘP ĐẾN GIẢI PHÁP KINH DOANH TOÀN DIỆN</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 1rem; opacity: 0.9;">Green Box không chỉ sản xuất hộp.</p>
-                    <p style="font-size: 1.1rem; opacity: 0.9;">Chúng tôi cung cấp giải pháp giúp doanh nghiệp:</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Tối ưu kho bãi</li>
-                        <li><i class="fas fa-check-circle"></i> Giảm chi phí logistics</li>
-                        <li><i class="fas fa-check-circle"></i> Nâng cao hình ảnh thương hiệu</li>
-                        <li><i class="fas fa-check-circle"></i> Tăng giá trị cảm nhận sản phẩm</li>
-                        <li><i class="fas fa-check-circle"></i> Tạo trải nghiệm cao cấp cho khách hàng</li>
-                    </ul>
+            <h2 class="section-title">{{ process.title }}</h2>
+            <div class="process-grid">
+                {% for step in process.steps %}
+                <div class="process-step">
+                    <div class="step-number">{{ loop.index }}</div>
+                    <h3>{{ step.title }}</h3>
+                    <p>{{ step.desc }}</p>
                 </div>
-                <div class="solution-img">
-                    <img src="https://images.unsplash.com/photo-1512418490979-92798cec1380?auto=format&fit=crop&w=800&q=80" alt="Giải pháp doanh nghiệp">
-                </div>
+                {% endfor %}
             </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: QUY TRÌNH LÀM VIỆC -->
-    <section class="timeline-section">
-        <div class="container">
-            <h2 class="section-title">QUY TRÌNH LÀM VIỆC</h2>
-            <p class="section-subtitle">Quy trình 6 bước chuyên nghiệp, minh bạch và nhanh chóng.</p>
-            <div class="timeline-grid">
-                <div class="timeline-item">
-                    <div class="timeline-number">1</div>
-                    <h4 style="color: var(--primary);">Tiếp nhận yêu cầu</h4>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-number">2</div>
-                    <h4 style="color: var(--primary);">Tư vấn giải pháp</h4>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-number">3</div>
-                    <h4 style="color: var(--primary);">Thiết kế mẫu</h4>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-number">4</div>
-                    <h4 style="color: var(--primary);">Báo giá</h4>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-number">5</div>
-                    <h4 style="color: var(--primary);">Sản xuất</h4>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-number">6</div>
-                    <h4 style="color: var(--primary);">Giao hàng</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 6: DỰ ÁN TIÊU BIỂU -->
-    <section class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">DỰ ÁN TIÊU BIỂU</h2>
-            <p class="section-subtitle">Một số sản phẩm thiết kế và in ấn nổi bật do Green Box thực hiện.</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=500&q=80" alt="Hộp trung thu">
-                    <div class="gallery-overlay"><h3>Hộp Trung Thu</h3></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&w=500&q=80" alt="Hộp mỹ phẩm">
-                    <div class="gallery-overlay"><h3>Hộp Mỹ Phẩm</h3></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1574345480373-c5a4d46c8273?auto=format&fit=crop&w=500&q=80" alt="Hộp thực phẩm">
-                    <div class="gallery-overlay"><h3>Hộp Thực Phẩm</h3></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&w=500&q=80" alt="Catalogue">
-                    <div class="gallery-overlay"><h3>Catalogue</h3></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1589417933932-d6fc67f4740e?auto=format&fit=crop&w=500&q=80" alt="Tem nhãn">
-                    <div class="gallery-overlay"><h3>Tem Nhãn</h3></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1542744094-24638ea095b5?auto=format&fit=crop&w=500&q=80" alt="Hồ sơ năng lực">
-                    <div class="gallery-overlay"><h3>Hồ Sơ Năng Lực</h3></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 7: DỊCH VỤ CỦA GREEN BOX -->
-    <section class="services-section">
-        <div class="container">
-            <h2 class="section-title">DỊCH VỤ CỦA GREEN BOX</h2>
-            <div class="service-tags">
-                <div class="service-tag">In Catalogue</div>
-                <div class="service-tag">In Hồ Sơ Năng Lực</div>
-                <div class="service-tag">In Tem Nhãn</div>
-                <div class="service-tag">Thiết Kế Bao Bì</div>
-                <div class="service-tag">In Hộp Giấy</div>
-                <div class="service-tag">In Túi Giấy</div>
-                <div class="service-tag">Thiết Kế Thương Hiệu</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 8: ĐỐI TÁC & KHÁCH HÀNG -->
-    <section class="partners-section">
-        <div class="container">
-            <h2 class="section-title" style="margin-bottom: 3rem;">ĐỐI TÁC & KHÁCH HÀNG</h2>
-            <div class="partners-track">
-                <!-- Repeated logos for continuous scrolling -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt="Cisco">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung">
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 9: TIN TỨC NỔI BẬT -->
-    <section class="news-section">
-        <div class="container">
-            <h2 class="section-title">TIN TỨC NỔI BẬT</h2>
-            <div class="features-grid">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=400&q=80" alt="News 1" class="product-img">
-                    <div class="product-content">
-                        <h3>Kiến thức bao bì gấp gọn</h3>
-                        <p>Xu hướng sử dụng bao bì gấp gọn thông minh trong doanh nghiệp hiện đại.</p>
-                        <a href="news.html" class="product-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=400&q=80" alt="News 2" class="product-img">
-                    <div class="product-content">
-                        <h3>Xu hướng thiết kế 2026</h3>
-                        <p>Cập nhật những màu sắc và phong cách thiết kế bao bì nổi bật năm nay.</p>
-                        <a href="news.html" class="product-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1542744094-24638ea095b5?auto=format&fit=crop&w=400&q=80" alt="News 3" class="product-img">
-                    <div class="product-content">
-                        <h3>Góc chuyên gia</h3>
-                        <p>Làm thế nào để tối ưu chi phí in ấn nhưng vẫn đảm bảo chất lượng?</p>
-                        <a href="news.html" class="product-link">Đọc thêm <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 10: CTA CUỐI TRANG -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>BẠN ĐANG TÌM GIẢI PHÁP BAO BÌ CHUYÊN NGHIỆP?</h2>
-            <p>Đội ngũ Green Box sẵn sàng tư vấn và báo giá miễn phí.</p>
-            <a href="pricing.html" class="btn-accent" style="display: inline-block; padding: 1.2rem 2.5rem; font-size: 1.1rem; margin-top: 1rem;">NHẬN BÁO GIÁ NGAY</a>
         </div>
     </section>

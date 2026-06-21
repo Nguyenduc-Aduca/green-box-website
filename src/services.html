@@ -1,69 +1,21 @@
 ---
+templateEngineOverride: njk, md
 layout: base.njk
 ---
-
-
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>DỊCH VỤ IN ẤN CHUYÊN NGHIỆP</h1>
             <p>Giải Pháp In Ấn Trọn Gói Cho Doanh Nghiệp</p>
         </div>
     </section>
-
-    <!-- Main Content -->
-                <section class="content-section">
+    <section class="content-section">
         <div class="container content-container">
-            <div id="hop-cung" class="content-block" style="padding-top: 80px; margin-top: -80px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px;">IN HỘP CỨNG CAO CẤP</h2>
-                <div style="display: flex; gap: 2rem; margin-top: 1rem; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 300px;">
-                        <p style="font-size: 1.1rem; line-height: 1.8;">Chuyên thiết kế và sản xuất các dòng hộp cứng cao cấp phục vụ quà tặng doanh nghiệp, trung thu, mỹ phẩm, thực phẩm và các sản phẩm cao cấp.</p>
-                        <ul style="font-size: 1.1rem; margin-left: 20px;"><li>Hộp quà trung thu</li><li>Hộp quà doanh nghiệp</li><li>Hộp mỹ phẩm</li><li>Hộp thực phẩm</li><li>Hộp nam châm</li><li>Hộp âm dương</li><li>Hộp kéo</li><li>Hộp cao cấp theo yêu cầu</li></ul>
-                    </div>
-                    <div style="flex: 1; min-width: 300px;"><img loading="lazy" src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80" style="width: 100%; border-radius: 8px;"></div>
-                </div>
+            {% for service in collections.services %}
+            <div class="content-block" style="padding-top: 80px; margin-top: -40px;">
+                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px;">{{ service.data.title }}</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8;">{{ service.data.subtitle }}</p>
+                <a href="{{ service.url }}" class="btn-accent" style="margin-top: 10px; display: inline-block;">Xem chi tiết</a>
             </div>
-
-            <div id="hop-gap" class="content-block" style="padding-top: 80px; margin-top: -40px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px;">HỘP GẤP GỌN THÔNG MINH</h2>
-                <div style="display: flex; gap: 2rem; margin-top: 1rem; flex-wrap: wrap-reverse;">
-                    <div style="flex: 1; min-width: 300px;"><img loading="lazy" src="https://images.unsplash.com/photo-1542744094-24638ea095b5?auto=format&fit=crop&w=600&q=80" style="width: 100%; border-radius: 8px;"></div>
-                    <div style="flex: 1; min-width: 300px;">
-                        <p style="font-size: 1.1rem; line-height: 1.8;">Giải pháp hộp gấp gọn hiện đại giúp tiết kiệm chi phí vận chuyển và kho bãi lên tới 80%.</p>
-                        <ul style="font-size: 1.1rem; margin-left: 20px;"><li>Hộp gấp gọn nam châm</li><li>Hộp gấp gọn quà tặng</li><li>Hộp gấp gọn trung thu</li><li>Hộp gấp gọn thương mại điện tử</li><li>Hộp gấp gọn theo yêu cầu</li></ul>
-                    </div>
-                </div>
-            </div>
-
-            <div id="hop-san" class="content-block" style="padding-top: 80px; margin-top: -40px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px;">HỘP SẴN - HỘP CÓ SẴN</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8;">Các mẫu hộp có sẵn với nhiều kích thước giúp khách hàng tiết kiệm thời gian và chi phí sản xuất.</p>
-                <ul style="font-size: 1.1rem; margin-left: 20px;"><li>Hộp quà có sẵn</li><li>Hộp trung thu có sẵn</li><li>Hộp mỹ phẩm có sẵn</li><li>Hộp quà tặng có sẵn</li></ul>
-            </div>
-
-            <div id="tui-giay" class="content-block" style="padding-top: 80px; margin-top: -40px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px;">IN TÚI GIẤY CAO CẤP</h2>
-                <div style="display: flex; gap: 2rem; margin-top: 1rem; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 300px;">
-                        <p style="font-size: 1.1rem; line-height: 1.8;">Thiết kế và sản xuất túi giấy đồng bộ với bộ nhận diện thương hiệu.</p>
-                        <ul style="font-size: 1.1rem; margin-left: 20px;"><li>Túi giấy quà tặng</li><li>Túi giấy mỹ phẩm</li><li>Túi giấy thời trang</li><li>Túi giấy thực phẩm</li><li>Túi giấy doanh nghiệp</li></ul>
-                    </div>
-                    <div style="flex: 1; min-width: 300px;"><img loading="lazy" src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?auto=format&fit=crop&w=600&q=80" style="width: 100%; border-radius: 8px;"></div>
-                </div>
-            </div>
-
-            <div id="oem-odm" class="content-block" style="padding-top: 80px; margin-top: -40px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px;">OEM - ODM BAO BÌ THƯƠNG HIỆU RIÊNG</h2>
-                <div style="display: flex; gap: 2rem; margin-top: 1rem; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 300px;">
-                        <p style="font-size: 1.1rem; line-height: 1.8;">Thiết kế, sản xuất và gia công bao bì theo thương hiệu riêng cho doanh nghiệp.</p>
-                        <ul style="font-size: 1.1rem; margin-left: 20px;"><li>Thiết kế độc quyền</li><li>In ấn</li><li>Sản xuất</li><li>Đóng gói</li><li>Giao hàng toàn quốc</li></ul>
-                    </div>
-                    <div style="flex: 1; min-width: 300px;"><img loading="lazy" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" style="width: 100%; border-radius: 8px;"></div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
-
-    

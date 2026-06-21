@@ -1,44 +1,23 @@
 ---
+templateEngineOverride: njk, md
 layout: base.njk
 ---
-
-
-    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
             <h1>TIN TỨC & SỰ KIỆN</h1>
             <p>Cập nhật xu hướng bao bì và thông tin mới nhất từ Green Box</p>
         </div>
     </section>
-
-    <!-- Main Content -->
-        <section class="content-section">
+    <section class="content-section">
         <div class="container content-container">
-            <div id="kien-thuc" class="content-block" style="padding-top: 80px; margin-top: -80px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;">Kiến Thức Bao Bì</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8;">Cung cấp các bài viết chuyên sâu về phân biệt các loại giấy (Ivory, Couche, Kraft, Duplex), cách tính định lượng giấy và quy trình bế hộp sóng cơ bản.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+            {% for article in collections.news %}
+            <div style="background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); padding: 2rem;">
+                <h3 style="color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 1rem;"><a href="{{ article.url }}" style="color: inherit; text-decoration: none;">{{ article.data.title }}</a></h3>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Ngày đăng: {{ article.date  if article.date else "Gần đây" }}</p>
+                <a href="{{ article.url }}" class="btn-outline">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
             </div>
-
-            <div id="xu-huong" class="content-block" style="padding-top: 80px; margin-top: -40px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;">Xu Hướng Thiết Kế</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8;">Cập nhật những xu hướng thiết kế bao bì mới nhất trên thế giới: Phong cách tối giản (Minimalism), thiết kế Vintage, và bao bì thông minh tích hợp mã QR truy xuất nguồn gốc.</p>
-            </div>
-
-            <div id="cong-nghe" class="content-block" style="padding-top: 80px; margin-top: -40px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;">Công Nghệ In Ấn</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8;">Phân tích sâu về sự khác biệt giữa in Offset, in Flexo và in Kỹ thuật số. Cách ứng dụng công nghệ phủ UV định hình, ép nhũ nóng lạnh để tăng độ bắt mắt cho hộp quà.</p>
-            </div>
-
-            <div id="hoat-dong" class="content-block" style="padding-top: 80px; margin-top: -40px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;">Hoạt Động Công Ty</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8;">Tin tức nội bộ, các buổi ký kết hợp tác chiến lược, hoạt động đào tạo kỹ thuật viên và lễ khánh thành xưởng sản xuất mở rộng của Green Box.</p>
-            </div>
-
-            <div id="khuyen-mai" class="content-block" style="padding-top: 80px; margin-top: -40px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;">Ưu Đãi & Sự Kiện</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8;">Tổng hợp các chương trình tri ân khách hàng: Miễn phí khuôn bế cho đơn hàng đầu tiên, giảm 20% phí thiết kế cho các dịp Lễ, Tết.</p>
+            {% endfor %}
             </div>
         </div>
     </section>
-
-    
