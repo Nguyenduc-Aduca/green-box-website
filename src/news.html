@@ -1,6 +1,6 @@
 ---
-templateEngineOverride: njk, md
 layout: base.njk
+templateEngineOverride: njk, md
 ---
     <section class="page-header">
         <div class="container">
@@ -10,12 +10,14 @@ layout: base.njk
     </section>
     <section class="content-section">
         <div class="container content-container">
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 900px; margin: 0 auto;">
             {% for article in collections.news %}
-            <div style="flex: 1 1 300px; max-width: 380px; text-align: left; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); padding: 2rem;">
-                <h3 style="color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 1rem;"><a href="{{ article.url }}" style="color: inherit; text-decoration: none;">{{ article.data.title }}</a></h3>
-                <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Ngày đăng: {{ article.date  if article.date else "Gần đây" }}</p>
-                <a href="{{ article.url }}" class="btn-outline">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
+            <div style="background: white; border-left: 4px solid var(--accent); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; transition: transform 0.2s ease;">
+                <div>
+                    <h3 style="color: var(--primary-dark); font-size: 1.3rem; margin-bottom: 0.5rem;"><a href="{{ article.url }}" style="color: inherit; text-decoration: none;">{{ article.data.title }}</a></h3>
+                    <p style="color: #888; font-size: 0.95rem; margin: 0;"><i class="far fa-calendar-alt" style="margin-right: 5px;"></i> Ngày đăng: {{ article.date if article.date else "Gần đây" }}</p>
+                </div>
+                <a href="{{ article.url }}" class="btn-outline" style="white-space: nowrap; margin-left: 1rem; padding: 8px 20px;">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
             </div>
             {% endfor %}
             </div>
