@@ -1,0 +1,37 @@
+---
+layout: base.njk
+---
+    <section class="page-header">
+        <div class="container">
+            <h1>{{ title }}</h1>
+            <p>{{ subtitle }}</p>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="container content-container">
+            {% for section in sections %}
+            <div class="content-block" style="padding-top: 80px; margin-top: -40px; margin-bottom: 80px;">
+                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px;">{{ section.title }}</h2>
+                <div style="display: flex; gap: 2.5rem; margin-top: 1.5rem; flex-wrap: wrap; flex-direction: {{ 'row-reverse' if loop.index0 % 2 != 0 else 'row' }}; align-items: center;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <img loading="lazy" src="{{ section.image }}" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <div style="font-size: 1.15rem; line-height: 1.8; color: #444; margin-bottom: 1.5rem;">
+                            {{ section.desc }}
+                        </div>
+                        <div style="background-color: #f4fcf6; border: 1px solid var(--primary); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 1.2rem; font-weight: bold;">NHẬN BÁO GIÁ NHANH TRONG 15 PHÚT</h4>
+                            <p style="font-size: 1rem; color: #555; margin-bottom: 1rem;">Nhập thông tin bên dưới, chuyên viên của Green Box sẽ liên hệ tư vấn và chốt giá gốc tại xưởng ngay lập tức.</p>
+                            <form style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <input type="text" placeholder="Tên doanh nghiệp / Anh Chị" style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ddd; border-radius: 4px;" required>
+                                <input type="tel" placeholder="Số điện thoại di động" style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ddd; border-radius: 4px;" required>
+                                <button type="submit" style="background-color: var(--primary); color: white; padding: 12px 24px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 6px rgba(40,167,69,0.2);">NHẬN BÁO GIÁ NGAY</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>

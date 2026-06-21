@@ -99,3 +99,44 @@ collections:
       - {label: "Tác giả", name: "author", widget: "string", default: "Admin"}
       - {label: "Ngày đăng", name: "date", widget: "datetime"}
       - {label: "Nội dung bài viết", name: "body", widget: "markdown"}
+
+  - name: "services"
+    label: "Dịch Vụ In Ấn"
+    folder: "src/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Tiêu đề trang (H1)", name: "title", widget: "string"}
+      - {label: "Mô tả trang", name: "subtitle", widget: "string"}
+      - label: "Các hạng mục dịch vụ"
+        name: "sections"
+        widget: "list"
+        fields:
+          - {label: "Tên hạng mục", name: "title", widget: "string"}
+          - {label: "Mô tả chi tiết", name: "desc", widget: "text"}
+          - {label: "Ảnh minh họa", name: "image", widget: "image"}
+
+  - name: "designs"
+    label: "Dịch Vụ Thiết Kế"
+    folder: "src/designs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Tiêu đề trang (H1)", name: "title", widget: "string"}
+      - {label: "Mô tả trang", name: "subtitle", widget: "string"}
+      - label: "Các hạng mục thiết kế"
+        name: "sections"
+        widget: "list"
+        fields:
+          - {label: "Tên hạng mục", name: "title", widget: "string"}
+          - {label: "Mô tả chi tiết", name: "desc", widget: "text"}
+          - {label: "Ảnh minh họa", name: "image", widget: "image"}
+
+  - name: "careers"
+    label: "Tuyển Dụng"
+    folder: "src/careers"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Vị trí tuyển dụng", name: "title", widget: "string"}
+      - {label: "Chi tiết JD (Mô tả, Yêu cầu, Quyền lợi)", name: "body", widget: "markdown"}
