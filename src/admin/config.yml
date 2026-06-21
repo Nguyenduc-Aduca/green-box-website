@@ -36,7 +36,25 @@ collections:
           - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
           - {label: "Tiêu đề chính", name: "title", widget: "string"}
           - {label: "Mô tả phụ", name: "subtitle", widget: "string"}
-          - {label: "Nội dung bài (Mã HTML)", name: "body", widget: "markdown"}
+          - {label: "Nội dung Tầm Nhìn", name: "tam_nhin", widget: "text"}
+          - {label: "Nội dung Sứ Mệnh", name: "su_menh", widget: "text"}
+          - {label: "Ảnh Tầm Nhìn", name: "tam_nhin_img", widget: "image"}
+          - {label: "Mô tả Đội ngũ", name: "doi_ngu_desc", widget: "text"}
+          - label: "Danh sách Đội ngũ"
+            name: "doi_ngu"
+            widget: "list"
+            fields:
+              - {label: "Tên", name: "name", widget: "string"}
+              - {label: "Chức vụ", name: "title", widget: "string"}
+              - {label: "Mô tả", name: "desc", widget: "text"}
+              - {label: "Ảnh đại diện", name: "image", widget: "image"}
+          - {label: "Mô tả Hệ thống Máy móc", name: "may_moc_desc", widget: "text"}
+          - label: "Danh sách Máy móc"
+            name: "may_moc"
+            widget: "list"
+            fields:
+              - {label: "Tên máy", name: "title", widget: "string"}
+              - {label: "Ảnh máy", name: "image", widget: "image"}
       - label: "Báo Giá"
         name: "pricing"
         file: "src/pricing.html"
@@ -44,7 +62,21 @@ collections:
           - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
           - {label: "Tiêu đề chính", name: "title", widget: "string"}
           - {label: "Mô tả phụ", name: "subtitle", widget: "string"}
-          - {label: "Nội dung bảng giá (Mã HTML)", name: "body", widget: "markdown"}
+          - label: "Danh sách Bảng giá"
+            name: "pricing_tables"
+            widget: "list"
+            fields:
+              - {label: "Tên bảng (VD: 1. BÁO GIÁ...)", name: "name", widget: "string"}
+              - {label: "Mô tả quy cách", name: "desc", widget: "text"}
+              - label: "Các mức giá"
+                name: "rows"
+                widget: "list"
+                fields:
+                  - {label: "Số lượng (VD: Từ 500 hộp)", name: "qty", widget: "string"}
+                  - {label: "Đơn giá (VD: 45.000đ)", name: "price", widget: "string", required: false}
+                  - {label: "Ghi chú", name: "note", widget: "string", required: false}
+                  - {label: "Là Best Seller?", name: "is_best_seller", widget: "boolean", default: false, required: false}
+                  - {label: "Liên hệ VIP?", name: "is_vip", widget: "boolean", default: false, required: false}
       - label: "Liên Hệ"
         name: "contact"
         file: "src/contact.html"
@@ -55,7 +87,7 @@ collections:
           - {label: "Địa chỉ", name: "address", widget: "string"}
           - {label: "Hotline", name: "hotline", widget: "string"}
           - {label: "Email", name: "email", widget: "string"}
-          - {label: "Nội dung khác (Mã HTML)", name: "body", widget: "markdown"}
+          
 
   - name: "news"
     label: "Tin Tức"

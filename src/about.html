@@ -2,6 +2,31 @@
 layout: base.njk
 title: "GREEN BOX"
 subtitle: "Công Nghệ Trong Từng Nếp Gấp"
+tam_nhin: "Đến năm 2030, Green Box đặt mục tiêu trở thành nhà máy sản xuất bao bì giấy và hộp cứng cao cấp số 1 tại Đông Nam Á. Chúng tôi tiên phong ứng dụng công nghệ bao bì xanh, thân thiện môi trường để thay thế hoàn toàn nhựa dùng một lần."
+su_menh: "\"Nâng tầm thương hiệu Việt qua từng nếp gấp\". Green Box cam kết mang lại giải pháp bao bì đột phá giúp khách hàng tiết kiệm 80% thể tích kho bãi, giảm thiểu chi phí logistics và tạo ấn tượng hoàn hảo trong mắt người tiêu dùng cuối."
+tam_nhin_img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80"
+doi_ngu_desc: "Sức mạnh cốt lõi của Green Box nằm ở đội ngũ hơn 200 nhân sự chất lượng cao, bao gồm các chuyên gia thiết kế sáng tạo và kỹ sư vận hành nhà máy dày dặn kinh nghiệm."
+doi_ngu:
+  - name: "Nguyễn Văn A"
+    title: "Giám đốc R&D"
+    desc: "15 năm kinh nghiệm trong ngành nghiên cứu cấu trúc vật liệu bao bì công nghiệp."
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&h=200&q=80"
+  - name: "Trần Thị B"
+    title: "Trưởng phòng Thiết kế"
+    desc: "Từng đoạt giải thưởng Bao bì Châu Á. Chuyên gia tạo hình Mockup 3D."
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80"
+  - name: "Lê Hoàng C"
+    title: "Quản đốc Phân xưởng"
+    desc: "Chuyên gia vận hành máy in Offset Heidelberg 6 màu nhập khẩu từ Đức."
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&h=200&q=80"
+may_moc_desc: "Nhà máy Green Box rộng 5.000m² tại KCN Thạch Thất được trang bị dây chuyền tự động hóa 100%, đáp ứng công suất 100.000 hộp/ngày."
+may_moc:
+  - title: "Máy in Offset Heidelberg 6 màu"
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
+  - title: "Máy ép kim & bế nổi tự động"
+    image: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&w=600&q=80"
+  - title: "Dây chuyền dán hộp tự động tốc độ cao"
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80"
 ---
     <section class="page-header">
         <div class="container">
@@ -10,9 +35,7 @@ subtitle: "Công Nghệ Trong Từng Nếp Gấp"
         </div>
     </section>
 
-    
-
-        <!-- Main Content -->
+    <!-- Main Content -->
     <section class="content-section">
         <div class="container content-container">
             
@@ -20,101 +43,42 @@ subtitle: "Công Nghệ Trong Từng Nếp Gấp"
                 <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;">Tầm Nhìn & Sứ Mệnh</h2>
                 <div style="display: flex; gap: 2rem; margin-top: 1rem; align-items: center; flex-wrap: wrap;">
                     <div style="flex: 1; min-width: 300px;">
-                        <p style="font-size: 1.1rem; line-height: 1.8;"><strong>Tầm Nhìn:</strong> Đến năm 2030, Green Box đặt mục tiêu trở thành nhà máy sản xuất bao bì giấy và hộp cứng cao cấp số 1 tại Đông Nam Á. Chúng tôi tiên phong ứng dụng công nghệ bao bì xanh, thân thiện môi trường để thay thế hoàn toàn nhựa dùng một lần.</p>
-                        <p style="font-size: 1.1rem; line-height: 1.8;"><strong>Sứ Mệnh:</strong> "Nâng tầm thương hiệu Việt qua từng nếp gấp". Green Box cam kết mang lại giải pháp bao bì đột phá giúp khách hàng tiết kiệm 80% thể tích kho bãi, giảm thiểu chi phí logistics và tạo ấn tượng hoàn hảo trong mắt người tiêu dùng cuối.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8;"><strong>Tầm Nhìn:</strong> {{ tam_nhin }}</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8;"><strong>Sứ Mệnh:</strong> {{ su_menh }}</p>
                     </div>
                     <div style="flex: 1; min-width: 300px;">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Tầm nhìn Green Box" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                        <img loading="lazy" src="{{ tam_nhin_img }}" alt="Tầm nhìn Green Box" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
                     </div>
                 </div>
             </div>
 
             <div id="doi-ngu" class="content-block" style="padding-top: 80px; margin-top: -40px;">
                 <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;">Đội Ngũ Chuyên Gia</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Sức mạnh cốt lõi của Green Box nằm ở đội ngũ hơn 200 nhân sự chất lượng cao, bao gồm các chuyên gia thiết kế sáng tạo và kỹ sư vận hành nhà máy dày dặn kinh nghiệm.</p>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">{{ doi_ngu_desc }}</p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    {% for member in doi_ngu %}
                     <div style="background: var(--surface); padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--border);">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&h=200&q=80" alt="Chuyên gia" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
-                        <h3 style="margin-bottom: 0.5rem; color: var(--text-main);">Nguyễn Văn A</h3>
-                        <p style="color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">Giám đốc R&D</p>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">15 năm kinh nghiệm trong ngành nghiên cứu cấu trúc vật liệu bao bì công nghiệp.</p>
+                        <img loading="lazy" src="{{ member.image }}" alt="{{ member.name }}" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--text-main);">{{ member.name }}</h3>
+                        <p style="color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">{{ member.title }}</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">{{ member.desc }}</p>
                     </div>
-                    <div style="background: var(--surface); padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--border);">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&h=200&q=80" alt="Chuyên gia" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
-                        <h3 style="margin-bottom: 0.5rem; color: var(--text-main);">Trần Thị B</h3>
-                        <p style="color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">Trưởng phòng Thiết kế</p>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Từng đoạt giải thưởng Bao bì Châu Á. Chuyên gia tạo hình Mockup 3D.</p>
-                    </div>
-                    <div style="background: var(--surface); padding: 1.5rem; border-radius: 8px; text-align: center; border: 1px solid var(--border);">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&h=200&q=80" alt="Chuyên gia" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
-                        <h3 style="margin-bottom: 0.5rem; color: var(--text-main);">Lê Hoàng C</h3>
-                        <p style="color: var(--primary); font-weight: bold; margin-bottom: 0.5rem;">Quản đốc Phân xưởng</p>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Chuyên gia vận hành máy in Offset Heidelberg 6 màu nhập khẩu từ Đức.</p>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
 
             <div id="may-moc" class="content-block" style="padding-top: 80px; margin-top: -40px;">
                 <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;">Hệ Thống Máy Móc</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Nhà máy Green Box rộng 5.000m² tại KCN Thạch Thất được trang bị dây chuyền tự động hóa 100%, đáp ứng công suất 100.000 hộp/ngày.</p>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">{{ may_moc_desc }}</p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    {% for may in may_moc %}
                     <div style="position: relative; overflow: hidden; border-radius: 8px;">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Máy in Offset" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                        <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px; text-align: center;">Máy in Offset Heidelberg 6 màu</div>
+                        <img loading="lazy" src="{{ may.image }}" alt="{{ may.title }}" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                        <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px; text-align: center;">{{ may.title }}</div>
                     </div>
-                    <div style="position: relative; overflow: hidden; border-radius: 8px;">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&w=600&q=80" alt="Máy ép kim" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                        <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px; text-align: center;">Máy ép kim & bế nổi tự động</div>
-                    </div>
-                    <div style="position: relative; overflow: hidden; border-radius: 8px;">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Máy dán hộp" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                        <div style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px; text-align: center;">Dây chuyền dán hộp tự động tốc độ cao</div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="chung-chi" class="content-block" style="padding-top: 80px; margin-top: -40px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;">Chứng Chỉ & Giải Thưởng</h2>
-                <div style="display: flex; gap: 2rem; align-items: center; background: var(--surface); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 200px; text-align: center;">
-                        <i class="fas fa-award" style="font-size: 4rem; color: #ffd700; margin-bottom: 1rem;"></i>
-                        <h3 style="margin-bottom: 0.5rem;">ISO 9001:2015</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Hệ thống quản lý chất lượng đạt chuẩn quốc tế.</p>
-                    </div>
-                    <div style="flex: 1; min-width: 200px; text-align: center;">
-                        <i class="fas fa-tree" style="font-size: 4rem; color: #28a745; margin-bottom: 1rem;"></i>
-                        <h3 style="margin-bottom: 0.5rem;">FSC Certified</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Chứng nhận nguồn gốc giấy bảo vệ rừng bền vững.</p>
-                    </div>
-                    <div style="flex: 1; min-width: 200px; text-align: center;">
-                        <i class="fas fa-trophy" style="font-size: 4rem; color: #ff5722; margin-bottom: 1rem;"></i>
-                        <h3 style="margin-bottom: 0.5rem;">Top 10 Sao Vàng</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Thương hiệu Việt Nam hội nhập quốc tế 2025.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="khach-hang" class="content-block" style="padding-top: 80px; margin-top: -40px;">
-                <h2 style="color: var(--primary); text-transform: uppercase; border-bottom: 2px solid var(--primary); padding-bottom: 10px; display: inline-block;">Khách Hàng Tiêu Biểu</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Chúng tôi tự hào là đối tác chiến lược cung cấp giải pháp bao bì cho hơn 500+ thương hiệu lớn trong và ngoài nước.</p>
-                <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; align-items: center; padding: 2rem; background: #fff; border: 1px solid var(--border); border-radius: 8px;">
-                    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas" style="height: 50px; opacity: 0.7; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
-                    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" style="height: 30px; opacity: 0.7; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
-                    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt="Cisco" style="height: 40px; opacity: 0.7; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
-                    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" style="height: 40px; opacity: 0.7; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
-                    <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack" style="height: 40px; opacity: 0.7; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+                    {% endfor %}
                 </div>
             </div>
             
         </div>
     </section>
-    <!-- CTA Profile -->
-    <section class="cta-profile" style="padding: 4rem 0; background-color: var(--surface); text-align: center; border-top: 1px solid var(--border);">
-        <div class="container">
-            <h2 style="font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 1rem;">Tìm Hiểu Sâu Hơn Về Năng Lực Của Chúng Tôi</h2>
-            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Tải xuống Hồ sơ năng lực (Company Profile) mới nhất năm 2026 để xem chi tiết hệ thống máy móc, dây chuyền sản xuất và các dự án tiêu biểu.</p>
-            <a href="javascript:void(0)" onclick="openProfileModal()" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 3rem;"><i class="fas fa-file-download"></i> Tải Company Profile (PDF)</a>
-        </div>
-    </section>
-<!-- Footer -->
-    

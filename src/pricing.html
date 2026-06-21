@@ -2,15 +2,40 @@
 layout: base.njk
 title: "BẢNG BÁO GIÁ SẢN XUẤT"
 subtitle: "Minh bạch, chi tiết và tối ưu chi phí nhất cho khách hàng doanh nghiệp."
+pricing_tables:
+  - name: "1. BÁO GIÁ IN HỘP CỨNG CAO CẤP"
+    desc: "Quy cách chuẩn: Giấy bồi carton lạnh 2-2.5mm, in offset 4 màu, ép kim logo, khay lót mút xốp phủ nhung."
+    rows:
+      - qty: "Từ 500 hộp"
+        price: "45.000đ - 65.000đ"
+        note: "Tối ưu cho sự kiện, test sản phẩm mới."
+      - qty: "Từ 1.000 hộp"
+        price: "35.000đ - 48.000đ"
+        note: "Đơn giá tối ưu nhất cho ra mắt sản phẩm."
+        is_best_seller: true
+      - qty: "Từ 3.000 hộp"
+        price: "28.000đ - 38.000đ"
+        note: "Giá sỉ chiết khấu cao cho đại lý."
+      - qty: "Trên 5.000 hộp"
+        is_vip: true
+  - name: "2. BÁO GIÁ HỘP GẤP GỌN NAM CHÂM"
+    desc: "Quy cách chuẩn: Carton 2mm, giấy bồi C150, nam châm ẩn, thiết kế gập phẳng."
+    rows:
+      - qty: "Từ 500 hộp"
+        price: "38.000đ - 55.000đ"
+        note: "In logo 1 màu."
+      - qty: "Từ 1.000 hộp"
+        price: "32.000đ - 45.000đ"
+        note: "In offset nhiều màu."
+        is_best_seller: true
 ---
+    <!-- Pricing Header -->
     <section class="page-header" style="background: linear-gradient(rgba(10, 122, 74, 0.8), rgba(6, 95, 58, 0.9)), url('https://images.unsplash.com/photo-1554774853-719586f82d77?auto=format&fit=crop&w=1600&q=80') center/cover; padding: 5rem 0; text-align: center; color: white;">
         <div class="container">
             <h1 style="font-size: 3rem; margin-bottom: 1rem;">{{ title }}</h1>
             <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9;">{{ subtitle }}</p>
         </div>
     </section>
-
-    
 
     <section class="content-section" style="padding: 4rem 0; background: #f8f9fa;">
         <div class="container content-container">
@@ -30,10 +55,10 @@ subtitle: "Minh bạch, chi tiết và tối ưu chi phí nhất cho khách hàn
                 .contact-btn:hover { background: var(--primary-dark); color: white; transform: translateY(-2px); }
             </style>
 
-            <!-- Table 1 -->
-            <div id="bao-gia-hop-cung" class="pricing-table-container">
-                <h2>1. BÁO GIÁ IN HỘP CỨNG CAO CẤP</h2>
-                <p class="desc">Quy cách chuẩn: Giấy bồi carton lạnh 2-2.5mm, in offset 4 màu, ép kim logo, khay lót mút xốp phủ nhung.</p>
+            {% for table in pricing_tables %}
+            <div class="pricing-table-container">
+                <h2>{{ table.name }}</h2>
+                <p class="desc">{{ table.desc }}</p>
                 <div style="overflow-x:auto;">
                     <table class="price-table">
                         <thead>
@@ -44,184 +69,22 @@ subtitle: "Minh bạch, chi tiết và tối ưu chi phí nhất cho khách hàn
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="qty">Từ 500 hộp</td>
-                                <td class="price">45.000đ - 65.000đ</td>
-                                <td>Tối ưu cho sự kiện, test sản phẩm mới.</td>
-                            </tr>
-                            <tr class="highlight-row">
-                                <td class="qty">Từ 1.000 hộp <span class="highlight-badge">BEST SELLER</span></td>
-                                <td class="price">35.000đ - 48.000đ</td>
-                                <td>Đơn giá tối ưu nhất cho ra mắt sản phẩm.</td>
-                            </tr>
-                            <tr>
-                                <td class="qty">Từ 3.000 hộp</td>
-                                <td class="price">28.000đ - 38.000đ</td>
-                                <td>Giá sỉ chiết khấu cao cho đại lý.</td>
-                            </tr>
-                            <tr>
-                                <td class="qty">Trên 5.000 hộp</td>
-                                <td class="price">Liên hệ Giám đốc SX</td>
-                                <td><a href="contact.html" class="contact-btn">Nhận báo giá VIP</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Table 2 -->
-            <div id="bao-gia-hop-gap" class="pricing-table-container">
-                <h2>2. BÁO GIÁ HỘP GẤP GỌN THÔNG MINH</h2>
-                <p class="desc">Quy cách chuẩn: Nam châm ẩn, thiết kế gập phẳng tiết kiệm 80% thể tích, giấy Ivory/Couche cán màng.</p>
-                <div style="overflow-x:auto;">
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Số lượng (Hộp)</th>
-                                <th>Đơn giá dự kiến (VNĐ/hộp)</th>
-                                <th>Ghi chú</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="qty">Từ 500 hộp</td>
-                                <td class="price">38.000đ - 55.000đ</td>
-                                <td>Phù hợp ngành thời trang, TMĐT cao cấp.</td>
-                            </tr>
-                            <tr class="highlight-row">
-                                <td class="qty">Từ 1.000 hộp <span class="highlight-badge">POPULAR</span></td>
-                                <td class="price">28.000đ - 42.000đ</td>
-                                <td>Mức giá tiết kiệm chi phí vận chuyển tối đa.</td>
-                            </tr>
-                            <tr>
-                                <td class="qty">Từ 3.000 hộp</td>
-                                <td class="price">22.000đ - 32.000đ</td>
-                                <td>Lên khuôn sản xuất hàng loạt nhanh chóng.</td>
-                            </tr>
-                            <tr>
-                                <td class="qty">Trên 5.000 hộp</td>
-                                <td class="price">Liên hệ Giám đốc SX</td>
-                                <td><a href="contact.html" class="contact-btn">Nhận báo giá VIP</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Table 3 -->
-            <div id="bao-gia-hop-san" class="pricing-table-container">
-                <h2>3. BÁO GIÁ KHO HỘP CÓ SẴN (MUA LẺ)</h2>
-                <p class="desc">Quy cách: Hộp nam châm hoặc hộp âm dương có sẵn, không in logo hoặc hỗ trợ in lưới/ép nhũ logo số lượng ít.</p>
-                <div style="overflow-x:auto;">
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Số lượng (Hộp)</th>
-                                <th>Đơn giá bán lẻ (VNĐ/hộp)</th>
-                                <th>Phụ phí gia công thêm logo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="qty">Từ 50 - 100 hộp</td>
-                                <td class="price">35.000đ - 50.000đ</td>
-                                <td>Ép kim: + 4.000đ/vị trí</td>
-                            </tr>
-                            <tr class="highlight-row">
-                                <td class="qty">Từ 200 - 500 hộp</td>
-                                <td class="price">25.000đ - 38.000đ</td>
-                                <td>Ép kim: + 3.000đ/vị trí</td>
-                            </tr>
-                            <tr>
-                                <td colspan="3" style="text-align: center; color: var(--text-muted);">
-                                    <em>* Các mẫu hộp có sẵn giao trong vòng 24H khu vực nội thành. Vui lòng gọi Hotline để xem mẫu thực tế tại kho.</em>
+                            {% for row in table.rows %}
+                            <tr class="{{ 'highlight-row' if row.is_best_seller else '' }}">
+                                <td class="qty">{{ row.qty }} {% if row.is_best_seller %}<span class="highlight-badge">BEST SELLER</span>{% endif %}</td>
+                                <td class="price">
+                                    {% if row.is_vip %}Liên hệ Giám đốc SX{% else %}{{ row.price }}{% endif %}
+                                </td>
+                                <td>
+                                    {% if row.is_vip %}<a href="contact.html" class="contact-btn">Nhận báo giá VIP</a>{% else %}{{ row.note }}{% endif %}
                                 </td>
                             </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
             </div>
+            {% endfor %}
 
-            <!-- Table 4 -->
-            <div id="bao-gia-tui-giay" class="pricing-table-container">
-                <h2>4. BÁO GIÁ IN TÚI GIẤY CAO CẤP</h2>
-                <p class="desc">Quy cách chuẩn: Giấy Ivory 250gsm, in offset 4 màu, cán màng mờ, xỏ dây lụa bóng/dây dù chịu lực tốt.</p>
-                <div style="overflow-x:auto;">
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Số lượng (Túi)</th>
-                                <th>Đơn giá dự kiến (VNĐ/túi)</th>
-                                <th>Ghi chú</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="qty">Từ 500 túi</td>
-                                <td class="price">12.000đ - 18.000đ</td>
-                                <td>Túi đứng/ngang định vị thương hiệu.</td>
-                            </tr>
-                            <tr class="highlight-row">
-                                <td class="qty">Từ 1.000 túi <span class="highlight-badge">BEST SELLER</span></td>
-                                <td class="price">8.500đ - 12.000đ</td>
-                                <td>Tối ưu chi phí bao bì phụ trợ.</td>
-                            </tr>
-                            <tr>
-                                <td class="qty">Từ 3.000 túi</td>
-                                <td class="price">6.500đ - 9.000đ</td>
-                                <td>Sản xuất offset chạy tốc độ cao.</td>
-                            </tr>
-                            <tr>
-                                <td class="qty">Trên 5.000 túi</td>
-                                <td class="price">Báo giá sỉ trực tiếp</td>
-                                <td><a href="contact.html" class="contact-btn">Gửi File báo giá</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Table 5 -->
-            <div id="bao-gia-oem" class="pricing-table-container" style="border: 2px solid var(--primary);">
-                <h2>5. DỊCH VỤ OEM - ODM BAO BÌ (TRỌN GÓI)</h2>
-                <p class="desc">Giải pháp toàn diện từ Phác thảo 3D -> Mẫu thực tế -> Sản xuất hàng loạt dành cho Thương hiệu chuỗi, Tập đoàn đa quốc gia.</p>
-                <div style="overflow-x:auto;">
-                    <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Hạng Mục Thực Hiện</th>
-                                <th>Chi phí dịch vụ</th>
-                                <th>Cam kết Green Box</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="qty">Nghiên cứu & Thiết kế 3D</td>
-                                <td class="price">MIỄN PHÍ</td>
-                                <td>(Áp dụng khi ký HĐ nguyên tắc sản xuất)</td>
-                            </tr>
-                            <tr>
-                                <td class="qty">Làm Sample (Mẫu thật nghiệm thu)</td>
-                                <td class="price">HOÀN TIỀN 100%</td>
-                                <td>Sẽ khấu trừ trực tiếp vào đơn hàng sản xuất đại trà.</td>
-                            </tr>
-                            <tr class="highlight-row">
-                                <td class="qty">Sản xuất hàng loạt (BOM)</td>
-                                <td class="price">Báo giá theo hạng mục vật tư</td>
-                                <td>Chiết khấu lớn dựa trên hợp đồng dài hạn (SLA). Tối ưu 20-30% tổng ngân sách bao bì/năm.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="contact.html" class="contact-btn" style="padding: 15px 40px; font-size: 1.1rem; background-color: var(--accent); color: #111;">ĐẶT HẸN TƯ VẤN OEM/ODM</a>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 4rem;">
-                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1rem;">* Lưu ý: Bảng giá trên mang tính chất tham khảo. Đơn giá thực tế phụ thuộc vào kích thước, chất liệu giấy, quy cách gia công ép kim/phủ UV và số lượng cụ thể.</p>
-                <p style="font-size: 1.3rem; color: var(--primary-dark); font-weight: bold;">Hãy để lại thông tin để nhận báo giá chi tiết, bóc tách vật tư chính xác nhất!</p>
-            </div>
         </div>
     </section>
-
