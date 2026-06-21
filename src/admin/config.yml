@@ -29,3 +29,41 @@ collections:
             fields:
               - {label: "Tiêu đề mục", name: "title", widget: "string"}
               - {label: "Mô tả mục", name: "subtitle", widget: "text"}
+      - label: "Giới Thiệu"
+        name: "about"
+        file: "src/about.html"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Tiêu đề chính", name: "title", widget: "string"}
+          - {label: "Mô tả phụ", name: "subtitle", widget: "string"}
+          - {label: "Nội dung bài (Mã HTML)", name: "body", widget: "markdown"}
+      - label: "Báo Giá"
+        name: "pricing"
+        file: "src/pricing.html"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Tiêu đề chính", name: "title", widget: "string"}
+          - {label: "Mô tả phụ", name: "subtitle", widget: "string"}
+          - {label: "Nội dung bảng giá (Mã HTML)", name: "body", widget: "markdown"}
+      - label: "Liên Hệ"
+        name: "contact"
+        file: "src/contact.html"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Tiêu đề chính", name: "title", widget: "string"}
+          - {label: "Mô tả phụ", name: "subtitle", widget: "string"}
+          - {label: "Địa chỉ", name: "address", widget: "string"}
+          - {label: "Hotline", name: "hotline", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Nội dung khác (Mã HTML)", name: "body", widget: "markdown"}
+
+  - name: "news"
+    label: "Tin Tức"
+    folder: "src/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Tiêu đề bài viết", name: "title", widget: "string"}
+      - {label: "Tác giả", name: "author", widget: "string", default: "Admin"}
+      - {label: "Ngày đăng", name: "date", widget: "datetime"}
+      - {label: "Nội dung bài viết", name: "body", widget: "markdown"}
