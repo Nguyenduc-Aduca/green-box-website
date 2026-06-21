@@ -14,4 +14,18 @@ collections:
         file: "src/index.html"
         fields:
           - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
-          - {label: "Nội dung trang (HTML)", name: "body", widget: "markdown"}
+          - label: "Banner Chính (Hero Section)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Tiêu đề lớn (Tên thương hiệu)", name: "title", widget: "string"}
+              - {label: "Tiêu đề phụ (Slogan)", name: "subtitle", widget: "string"}
+              - {label: "Đoạn văn mô tả", name: "description", widget: "text"}
+              - {label: "Chữ trên nút bấm", name: "button_text", widget: "string"}
+              - {label: "Đường dẫn nút bấm", name: "button_link", widget: "string"}
+          - label: "Mục 2: Vì sao chọn Green Box"
+            name: "features"
+            widget: "object"
+            fields:
+              - {label: "Tiêu đề mục", name: "title", widget: "string"}
+              - {label: "Mô tả mục", name: "subtitle", widget: "text"}
