@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "pages"
+    label: "Trang Tĩnh"
+    files:
+      - label: "Trang Chủ"
+        name: "home"
+        file: "src/index.html"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Nội dung trang (HTML)", name: "body", widget: "markdown"}
