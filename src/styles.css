@@ -1313,8 +1313,9 @@ body {
     margin-bottom: 0.5rem;
 }
 .stat-label {
-    color: white !important;
+    color: #555;
     font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .process-grid {
