@@ -89,7 +89,7 @@ h3 { font-size: 1.5rem; }
 
 .btn-primary {
   background-color: var(--primary);
-  color: white;
+  color: white !important;
 }
 
 .btn-primary:hover {
@@ -99,20 +99,20 @@ h3 { font-size: 1.5rem; }
 }
 
 .btn-secondary {
-  background-color: transparent;
+  background-color: rgba(255,255,255,0.2) !important;
   color: var(--primary);
   border: 2px solid var(--primary);
 }
 
 .btn-secondary:hover {
   background-color: var(--primary);
-  color: white;
+  color: white !important;
 }
 
 /* Header & Topbar */
 .top-bar {
   background-color: var(--secondary);
-  color: white;
+  color: white !important;
   padding: 0.5rem 0;
   font-size: 0.875rem;
 }
@@ -133,7 +133,7 @@ h3 { font-size: 1.5rem; }
 }
 
 .top-bar-right a {
-  color: white;
+  color: white !important;
   opacity: 0.8;
 }
 
@@ -142,7 +142,7 @@ h3 { font-size: 1.5rem; }
 }
 
 .header {
-  background-color: white;
+  background-color: white !important;
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
@@ -210,7 +210,7 @@ h3 { font-size: 1.5rem; }
 .search-btn {
   padding: 0.5rem 1rem;
   background-color: var(--primary);
-  color: white;
+  color: white !important;
   border: none;
   border-radius: 0 9999px 9999px 0;
   cursor: pointer;
@@ -291,7 +291,7 @@ h3 { font-size: 1.5rem; }
 
 .services {
   padding: 5rem 0;
-  background-color: white;
+  background-color: white !important;
 }
 
 .services-grid {
@@ -381,13 +381,13 @@ h3 { font-size: 1.5rem; }
 /* CTA Section */
 .cta-section {
   background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-  color: white;
+  color: white !important;
   padding: 5rem 0;
   text-align: center;
 }
 
 .cta-section h2 {
-  color: white;
+  color: white !important;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -413,7 +413,7 @@ h3 { font-size: 1.5rem; }
 }
 
 .footer-col h3 {
-  color: white;
+  color: white !important;
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   position: relative;
@@ -499,12 +499,12 @@ h3 { font-size: 1.5rem; }
 /* Page Specific Styles (About, Services, etc) */
 .page-header {
   background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-  color: white;
+  color: white !important;
   padding: 4rem 0;
   text-align: center;
 }
 .page-header h1 {
-  color: white;
+  color: white !important;
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
@@ -514,7 +514,7 @@ h3 { font-size: 1.5rem; }
 }
 .content-section {
   padding: 4rem 0;
-  background-color: white;
+  background-color: white !important;
 }
 .content-container {
   max-width: 1200px;
@@ -579,7 +579,7 @@ h3 { font-size: 1.5rem; }
   background-position: center;
   display: flex;
   align-items: center;
-  color: white;
+  color: white !important;
 }
 .hero-new::before {
   content: '';
@@ -632,7 +632,7 @@ h3 { font-size: 1.5rem; }
 }
 .btn-outline-light {
   border: 2px solid white;
-  color: white;
+  color: white !important;
   padding: 1rem 2rem;
   border-radius: 4px;
   text-decoration: none;
@@ -640,7 +640,7 @@ h3 { font-size: 1.5rem; }
   transition: var(--transition);
 }
 .btn-outline-light:hover {
-  background-color: white;
+  background-color: white !important;
   color: var(--primary);
   transform: translateY(-2px);
 }
@@ -727,7 +727,7 @@ h3 { font-size: 1.5rem; }
 .solution-section {
   padding: 5rem 0;
   background-color: var(--primary);
-  color: white;
+  color: white !important;
 }
 .solution-content {
   display: flex;
@@ -788,7 +788,7 @@ h3 { font-size: 1.5rem; }
   width: 60px;
   height: 60px;
   background-color: var(--primary);
-  color: white;
+  color: white !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -832,7 +832,7 @@ h3 { font-size: 1.5rem; }
   transition: var(--transition);
 }
 .gallery-overlay h3 {
-  color: white;
+  color: white !important;
   transform: translateY(20px);
   transition: var(--transition);
 }
@@ -868,7 +868,7 @@ h3 { font-size: 1.5rem; }
 }
 .service-tag:hover {
   background: var(--primary);
-  color: white;
+  color: white !important;
   border-color: var(--primary);
   transform: translateY(-2px);
 }
@@ -910,13 +910,13 @@ h3 { font-size: 1.5rem; }
 .cta-section {
   padding: 5rem 0;
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: white;
+  color: white !important;
   text-align: center;
 }
 .cta-section h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: white;
+  color: white !important;
 }
 .cta-section p {
   font-size: 1.2rem;
@@ -1007,7 +1007,7 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: white !important;
     min-width: 260px;
     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
     z-index: 10000;
@@ -1089,7 +1089,7 @@ body {
     left: 0;
     right: 0;
     width: 100vw;
-    background-color: white;
+    background-color: white !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     z-index: 1000;
     border-top: 3px solid var(--primary);
@@ -1243,7 +1243,7 @@ body {
     padding: 6px 12px;
     border: 1px solid rgba(255,255,255,0.5);
     border-radius: 20px;
-    background-color: white;
+    background-color: white !important;
     outline: none;
     cursor: pointer;
     font-weight: 600;
@@ -1275,17 +1275,7 @@ body {
     top: 0px !important;
 }
 
-/* Fix Top Bar Slogan to 1 line */
-.top-bar-left {
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-right: 20px;
-}
-.top-bar-left strong {
-    font-weight: 500;
-}
+
 
 /* Fix Features Grid */
 .features-grid {
@@ -1323,7 +1313,7 @@ body {
     margin-bottom: 0.5rem;
 }
 .stat-label {
-    color: white;
+    color: white !important;
     font-size: 1.1rem;
 }
 
@@ -1347,7 +1337,7 @@ body {
     width: 50px;
     height: 50px;
     background: var(--accent);
-    color: white;
+    color: white !important;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1364,4 +1354,28 @@ body {
 .process-step p {
     color: #555;
     line-height: 1.6;
+}
+
+/* Slogan Marquee Animation */
+.top-bar-left {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 20px;
+}
+.top-bar-left strong {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+    font-weight: 500;
+}
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Fix Dropdown options readability */
+.goog-te-gadget .goog-te-combo option {
+    color: black !important;
+    background-color: white !important;
 }
