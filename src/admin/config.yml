@@ -124,14 +124,20 @@ collections:
     fields:
       - {label: "Tiêu đề trang (H1)", name: "title", widget: "string"}
       - {label: "Mô tả trang", name: "subtitle", widget: "string"}
-      - label: "Các hạng mục thiết kế"
+      - {label: "Ảnh nền Hero (URL)", name: "hero_bg", widget: "image", required: false}
+      - label: "Các khối nội dung"
         name: "sections"
         widget: "list"
         fields:
-          - {label: "Tên hạng mục", name: "title", widget: "string"}
-          - {label: "Mô tả chi tiết", name: "desc", widget: "text"}
+          - {label: "Tiêu đề khối", name: "title", widget: "string"}
+          - {label: "Mô tả chi tiết", name: "desc", widget: "markdown"}
           - {label: "Ảnh minh họa", name: "image", widget: "image"}
-
+      - label: "Quy Trình Sáng Tạo"
+        name: "workflows"
+        widget: "list"
+        fields:
+          - {label: "Tên bước", name: "title", widget: "string"}
+          - {label: "Mô tả bước", name: "desc", widget: "string"}
   - name: "careers"
     label: "Tuyển Dụng"
     folder: "src/careers"
