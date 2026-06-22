@@ -50,6 +50,46 @@ process:
       desc: "In ấn và gia công trên dây chuyền tự động khép kín."
     - title: "Kiểm Tra & Giao Hàng"
       desc: "KCS 100% chất lượng trước khi đóng thùng và giao."
+products:
+  title: "SẢN PHẨM NỔI BẬT"
+  subtitle: "Khám phá các mẫu bao bì cao cấp được yêu thích nhất."
+  items:
+    - name: "Hộp Cứng Cao Cấp"
+      desc: "Chất liệu carton lạnh bồi giấy mỹ thuật."
+      image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=500&q=80"
+    - name: "Hộp Gấp Gọn Nam Châm"
+      desc: "Tiết kiệm 80% diện tích lưu kho."
+      image: "https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&w=500&q=80"
+    - name: "Hộp Đựng Rượu"
+      desc: "Thiết kế sang trọng, lót mút định hình."
+      image: "https://images.unsplash.com/photo-1574345480373-c5a4d46c8273?auto=format&fit=crop&w=500&q=80"
+    - name: "Hộp Yến Sào"
+      desc: "Ép kim, bế nổi logo chuyên nghiệp."
+      image: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&w=500&q=80"
+    - name: "Hộp Quà Tặng"
+      desc: "Bộ quà tặng cao cấp cuối năm."
+      image: "https://images.unsplash.com/photo-1589417933932-d6fc67f4740e?auto=format&fit=crop&w=500&q=80"
+    - name: "Hộp Mỹ Phẩm"
+      desc: "Thiết kế tinh tế, thu hút phái đẹp."
+      image: "https://images.unsplash.com/photo-1542744094-24638ea095b5?auto=format&fit=crop&w=500&q=80"
+    - name: "Túi Giấy Kraft"
+      desc: "Bảo vệ môi trường, chi phí thấp."
+      image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=400&q=80"
+    - name: "Túi Giấy Cao Cấp"
+      desc: "Phủ UV, dập nổi logo."
+      image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=500&q=80"
+    - name: "Hộp Trà Cao Cấp"
+      desc: "Chất liệu an toàn thực phẩm."
+      image: "https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?auto=format&fit=crop&w=500&q=80"
+    - name: "Hộp Trung Thu"
+      desc: "Mẫu mã độc quyền, thiết kế riêng."
+      image: "https://images.unsplash.com/photo-1574345480373-c5a4d46c8273?auto=format&fit=crop&w=500&q=80"
+    - name: "Hộp Pizza"
+      desc: "Giấy sóng E cứng cáp."
+      image: "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&w=500&q=80"
+    - name: "Tem Nhãn Decal"
+      desc: "In sắc nét, bám dính tốt."
+      image: "https://images.unsplash.com/photo-1589417933932-d6fc67f4740e?auto=format&fit=crop&w=500&q=80"
 ---
     <!-- SECTION 1: HERO BANNER -->
     <section class="hero-new">
@@ -110,6 +150,27 @@ process:
                     <div class="step-number">{{ loop.index }}</div>
                     <h3>{{ step.title }}</h3>
                     <p>{{ step.desc }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: SẢN PHẨM NỔI BẬT -->
+    <section class="products-section-home">
+        <div class="container">
+            <h2 class="section-title">{{ products.title }}</h2>
+            <p class="section-subtitle">{{ products.subtitle }}</p>
+            <div class="products-grid-home">
+                {% for item in products.items %}
+                <div class="product-card-home">
+                    <div class="product-img-wrapper">
+                        <img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy">
+                    </div>
+                    <div class="product-info-home">
+                        <h3>{{ item.name }}</h3>
+                        <p>{{ item.desc }}</p>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

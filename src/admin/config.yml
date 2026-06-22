@@ -71,6 +71,19 @@ collections:
                 fields:
                   - {label: "Tên bước", name: "title", widget: "string"}
                   - {label: "Mô tả", name: "desc", widget: "string"}
+          - label: "Sản phẩm nổi bật"
+            name: "products"
+            widget: "object"
+            fields:
+              - {label: "Tiêu đề", name: "title", widget: "string"}
+              - {label: "Mô tả", name: "subtitle", widget: "string"}
+              - label: "Danh sách sản phẩm"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Tên sản phẩm", name: "name", widget: "string"}
+                  - {label: "Mô tả ngắn", name: "desc", widget: "string"}
+                  - {label: "Ảnh sản phẩm", name: "image", widget: "image"}
       - label: "Giới Thiệu"
         name: "about"
         file: "src/about.html"
