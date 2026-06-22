@@ -1244,13 +1244,15 @@ body {
     background-color: var(--surface);
 }
 .products-grid-home {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    align-items: stretch !important;
 }
 .product-card-home {
-    width: calc(33.333% - 20px);
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
     background: white;
     border-radius: 12px;
     overflow: hidden;
@@ -1276,8 +1278,12 @@ body {
     transform: scale(1.05);
 }
 .product-info-home {
+    flex-grow: 1 !important;
     padding: 1.5rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 .product-info-home h3 {
     color: var(--primary-dark);
@@ -1288,4 +1294,5 @@ body {
     color: #666;
     font-size: 0.95rem;
     line-height: 1.5;
+    margin: 0;
 }
