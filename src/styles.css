@@ -1244,11 +1244,13 @@ body {
     background-color: var(--surface);
 }
 .products-grid-home {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 .product-card-home {
+    width: calc(33.333% - 20px);
     background: white;
     border-radius: 12px;
     overflow: hidden;
