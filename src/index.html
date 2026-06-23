@@ -158,120 +158,16 @@ products:
 
 
     <!-- SECTION 5: SẢN PHẨM NỔI BẬT -->
-    <style>
-        .products-section-home { 
-            padding: 5rem 0; 
-            background: #f4f7f6;
-        }
-        
-        .products-page-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columns */
-            gap: 30px;
-            align-items: stretch;
-            width: 100%;
-        }
-        
-        /* Mobile responsive */
-        @media (max-width: 991px) {
-            .products-page-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 576px) {
-            .products-page-grid { grid-template-columns: 1fr; }
-        }
-        
-        .product-card-home {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            cursor: pointer;
-            border: 1px solid #eaeaea;
-            aspect-ratio: 1 / 1; /* PERFECT SQUARE */
-        }
-        
-        .product-card-home:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-            border-color: #d1d1d1;
-        }
-        
-        .product-img-wrapper {
-            flex-grow: 1; /* Image takes the remaining top space */
-            position: relative;
-            background-color: #f0f0f0; 
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .product-img-wrapper img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .product-card-home:hover .product-img-wrapper img {
-            transform: scale(1.03);
-        }
-        
-        .product-info-box {
-            padding: 15px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: white;
-            height: 100px; /* Fixed height for the text area */
-        }
-        
-        .product-info-box h3 {
-            font-size: 1.1rem;
-            color: #1a5632; /* Green Box primary color */
-            margin: 0 0 5px 0;
-            font-weight: 700;
-            line-height: 1.4;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        
-        .product-info-box p {
-            font-size: 0.9rem;
-            color: #666666;
-            line-height: 1.4;
-            margin: 0;
-            display: -webkit-box;
-            -webkit-line-clamp: 1; /* 1 line desc to save space in square */
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-    </style>
-    
-    <section class="products-section-home">
-        <div class="container">
-            <h2 class="section-title" style="margin-bottom: 2.5rem;">{{ products.title }}</h2>
-            <div class="products-page-grid">
-                {% for item in products.items %}
-                    {% if loop.index0 < 9 %} <!-- Only show exactly 9 items (3x3 grid) -->
-                    <div class="product-card-home">
-                        <div class="product-img-wrapper">
-                            <img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589417933932-d6fc67f4740e?w=500&q=80'">
-                        </div>
-                        <div class="product-info-box">
-                            <h3>{{ item.name }}</h3>
-                            <p>{{ item.desc }}</p>
-                        </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+<section class="products-section-home">
+<div class="container">
+<h2 class="section-title" style="margin-bottom: 2.5rem;">{{ products.title }}</h2>
+<div class="products-page-grid">
+{% for item in products.items %}{% if loop.index0 < 9 %}
+<div class="product-card-home">
+<div class="product-img-wrapper"><img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589417933932-d6fc67f4740e?w=500&q=80'"></div>
+<div class="product-info-box"><h3>{{ item.name }}</h3><p>{{ item.desc }}</p></div>
+</div>
+{% endif %}{% endfor %}
+</div>
+</div>
+</section>
