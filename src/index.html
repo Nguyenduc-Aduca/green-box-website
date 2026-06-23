@@ -161,25 +161,22 @@ products:
     <style>
         .products-section-home { 
             padding: 5rem 0; 
-            background: #f4f7f6; /* Light gray background like screenshot */
+            background: #f4f7f6;
         }
         
         .products-page-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 30px;
             align-items: stretch;
             width: 100%;
         }
         
         /* Mobile responsive */
         @media (max-width: 991px) {
-            .products-page-grid { grid-template-columns: repeat(3, 1fr); }
+            .products-page-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        @media (max-width: 767px) {
-            .products-page-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        }
-        @media (max-width: 480px) {
+        @media (max-width: 576px) {
             .products-page-grid { grid-template-columns: 1fr; }
         }
         
@@ -194,7 +191,7 @@ products:
             text-decoration: none;
             cursor: pointer;
             border: 1px solid #eaeaea;
-            height: 100%; /* Ensure equal heights */
+            aspect-ratio: 1 / 1; /* PERFECT SQUARE */
         }
         
         .product-card-home:hover {
@@ -204,8 +201,7 @@ products:
         }
         
         .product-img-wrapper {
-            width: 100%;
-            padding-top: 66.66%; /* Landscape 3:2 ratio */
+            flex-grow: 1; /* Image takes the remaining top space */
             position: relative;
             background-color: #f0f0f0; 
             border-bottom: 1px solid #f0f0f0;
@@ -226,37 +222,36 @@ products:
         }
         
         .product-info-box {
-            padding: 20px 15px;
+            padding: 15px;
             text-align: center;
             display: flex;
             flex-direction: column;
-            flex-grow: 1; /* Pushes content down to equal heights */
+            justify-content: center;
             background: white;
+            height: 100px; /* Fixed height for the text area */
         }
         
         .product-info-box h3 {
-            font-size: 1.05rem;
-            color: #234c9c; /* Blue color similar to screenshot */
-            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+            color: #1a5632; /* Green Box primary color */
+            margin: 0 0 5px 0;
             font-weight: 700;
             line-height: 1.4;
             display: -webkit-box;
-            -webkit-line-clamp: 2; /* Max 2 lines */
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            height: 2.94rem; /* Fixed height for 2 lines */
         }
         
         .product-info-box p {
             font-size: 0.9rem;
             color: #666666;
-            line-height: 1.5;
+            line-height: 1.4;
             margin: 0;
             display: -webkit-box;
-            -webkit-line-clamp: 2; /* Max 2 lines */
+            -webkit-line-clamp: 1; /* 1 line desc to save space in square */
             -webkit-box-orient: vertical;
             overflow: hidden;
-            height: 3rem; /* Fixed height for 2 lines */
         }
     </style>
     
@@ -265,15 +260,17 @@ products:
             <h2 class="section-title" style="margin-bottom: 2.5rem;">{{ products.title }}</h2>
             <div class="products-page-grid">
                 {% for item in products.items %}
-                <div class="product-card-home">
-                    <div class="product-img-wrapper">
-                        <img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589417933932-d6fc67f4740e?w=500&q=80'">
+                    {% if loop.index0 < 9 %} <!-- Only show exactly 9 items (3x3 grid) -->
+                    <div class="product-card-home">
+                        <div class="product-img-wrapper">
+                            <img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589417933932-d6fc67f4740e?w=500&q=80'">
+                        </div>
+                        <div class="product-info-box">
+                            <h3>{{ item.name }}</h3>
+                            <p>{{ item.desc }}</p>
+                        </div>
                     </div>
-                    <div class="product-info-box">
-                        <h3>{{ item.name }}</h3>
-                        <p>{{ item.desc }}</p>
-                    </div>
-                </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
