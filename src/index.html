@@ -156,3 +156,103 @@ products:
         </div>
     </section>
 
+
+    <!-- SECTION 5: SẢN PHẨM NỔI BẬT -->
+    <style>
+        .products-section-home { padding: 5rem 0; background: #eef2f5; }
+        
+        .products-page-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            align-items: stretch;
+            width: 100%;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 991px) {
+            .products-page-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 767px) {
+            .products-page-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        .product-card-home {
+            position: relative;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .product-card-home:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .product-img-wrapper {
+            width: 100%;
+            padding-top: 100%; /* Perfect 1:1 Square */
+            position: relative;
+            background-color: #e9ecef; 
+        }
+        
+        .product-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card-home:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+        
+        .product-info-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6); 
+            padding: 12px 10px;
+            text-align: center;
+            backdrop-filter: blur(2px);
+        }
+        
+        .product-info-overlay h3 {
+            font-size: 1.05rem;
+            color: white;
+            margin: 0;
+            font-weight: 600;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+    
+    <section class="products-section-home">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 2rem;">SẢN PHẨM NỔI BẬT</h2>
+            <div class="products-page-grid">
+                {% for item in products.items %}
+                <div class="product-card-home">
+                    <div class="product-img-wrapper">
+                        <img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589417933932-d6fc67f4740e?w=500&q=80'">
+                    </div>
+                    <div class="product-info-overlay">
+                        <h3>{{ item.name }}</h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
