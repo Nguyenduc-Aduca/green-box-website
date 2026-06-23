@@ -1363,3 +1363,50 @@ body {
 .process-step:hover .step-number { transform: scale(1.1); }
 .process-step h3 { font-size: 1.3rem; color: #1a5632; margin-bottom: 1rem; font-weight: 700; }
 .process-step p { color: #666; line-height: 1.6; margin: 0; }
+
+
+/* PROCESS ARROWS (1 -> 2 -> ... -> 6) */
+.process-grid { gap: 30px; margin-top: 3rem; }
+.process-step { position: relative; }
+/* Mũi tên trỏ sang phải cho các bước 1, 2, 4, 5 */
+.process-step:not(:nth-child(3n)):not(:last-child)::after {
+    content: '\f178';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #d4af37;
+    z-index: 10;
+}
+/* Mũi tên trỏ xuống cho bước 3 để nối xuống 4 */
+.process-step:nth-child(3):not(:last-child)::after {
+    content: '\f175';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #d4af37;
+    z-index: 10;
+}
+@media (max-width: 991px) {
+    .process-step:not(:last-child)::after {
+        content: '\f175' !important;
+        top: auto !important;
+        bottom: -40px !important;
+        right: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+    .process-grid { gap: 60px; }
+}
+
+/* FIX NHÀ MÁY (Xóa flex dư thừa) */
+.factory-section { text-align: center; }
+.factory-section .section-title { margin-bottom: 1rem; color: #1a5632; }
+.factory-section .section-subtitle { margin-bottom: 3rem; font-size: 1.1rem; color: #666; }

@@ -106,25 +106,7 @@ products:
 
     <!-- SECTION 2: VÌ SAO CHỌN GREEN BOX --><section class="features-section"><div class="container"><h2 class="section-title">{{ features.title }}</h2><p class="section-subtitle">{{ features.subtitle }}</p><div class="features-grid">{% for item in features.items %}<div class="feature-card"><div class="feature-icon-wrapper"><i class="{{ item.icon }} feature-icon"></i></div><h3>{{ item.title }}</h3></div>{% endfor %}</div></div></section>
 
-    <!-- SECTION 3: NHÀ MÁY -->
-    <section class="factory-section">
-        <div class="container">
-            <div class="factory-content">
-                <div class="factory-text">
-                    <h2 class="section-title" style="text-align: left; color: var(--primary-dark);">{{ factory.title }}</h2>
-                    <p style="color: #666; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">{{ factory.subtitle }}</p>
-                    <div class="stats-grid">
-                        {% for stat in factory.stats %}
-                        <div class="stat-item">
-                            <div class="stat-number">{{ stat.value }}</div>
-                            <div class="stat-label">{{ stat.label }}</div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- SECTION 3: NHÀ MÁY --><section class="factory-section"><div class="container"><h2 class="section-title">{{ factory.title }}</h2><p class="section-subtitle">{{ factory.subtitle }}</p><div class="stats-grid">{% for stat in factory.stats %}<div class="stat-item"><div class="stat-number">{{ stat.value }}</div><div class="stat-label">{{ stat.label }}</div></div>{% endfor %}</div></div></section>
 
     <!-- SECTION 4: QUY TRÌNH HỢP TÁC --><section class="process-section"><div class="container"><h2 class="section-title">{{ process.title }}</h2><div class="process-grid">{% for step in process.steps %}<div class="process-step"><div class="step-number">{{ loop.index }}</div><h3>{{ step.title }}</h3><p>{{ step.desc }}</p></div>{% endfor %}</div></div></section>
 
