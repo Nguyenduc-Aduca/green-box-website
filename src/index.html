@@ -104,21 +104,7 @@ products:
         </div>
     </section>
 
-    <!-- SECTION 2: VÌ SAO CHỌN GREEN BOX -->
-    <section class="features-section">
-        <div class="container">
-            <h2 class="section-title">{{ features.title }}</h2>
-            <p class="section-subtitle">{{ features.subtitle }}</p>
-            <div class="features-grid">
-                {% for item in features.items %}
-                <div class="feature-card">
-                    <i class="{{ item.icon }} feature-icon"></i>
-                    <h3>{{ item.title }}</h3>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+    <!-- SECTION 2: VÌ SAO CHỌN GREEN BOX --><section class="features-section"><div class="container"><h2 class="section-title">{{ features.title }}</h2><p class="section-subtitle">{{ features.subtitle }}</p><div class="features-grid">{% for item in features.items %}<div class="feature-card"><div class="feature-icon-wrapper"><i class="{{ item.icon }} feature-icon"></i></div><h3>{{ item.title }}</h3></div>{% endfor %}</div></div></section>
 
     <!-- SECTION 3: NHÀ MÁY -->
     <section class="factory-section">
@@ -140,21 +126,7 @@ products:
         </div>
     </section>
 
-    <!-- SECTION 4: QUY TRÌNH HỢP TÁC -->
-    <section class="process-section">
-        <div class="container">
-            <h2 class="section-title">{{ process.title }}</h2>
-            <div class="process-grid">
-                {% for step in process.steps %}
-                <div class="process-step">
-                    <div class="step-number">{{ loop.index }}</div>
-                    <h3>{{ step.title }}</h3>
-                    <p>{{ step.desc }}</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+    <!-- SECTION 4: QUY TRÌNH HỢP TÁC --><section class="process-section"><div class="container"><h2 class="section-title">{{ process.title }}</h2><div class="process-grid">{% for step in process.steps %}<div class="process-step"><div class="step-number">{{ loop.index }}</div><h3>{{ step.title }}</h3><p>{{ step.desc }}</p></div>{% endfor %}</div></div></section>
 
 
     <!-- SECTION 5: SẢN PHẨM NỔI BẬT -->
