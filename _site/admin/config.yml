@@ -1,0 +1,203 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "pages"
+    label: "Trang Tĩnh"
+    files:
+      - label: "Cấu Hình Chung (Global)"
+        name: "settings"
+        file: "src/_data/site.json"
+        fields:
+          - {label: "Đường dẫn Logo", name: "logo", widget: "image"}
+          - {label: "Dòng chữ trên cùng (Slogan top)", name: "top_text", widget: "string"}
+          - {label: "Tên công ty", name: "company_name", widget: "string"}
+          - {label: "Hotline", name: "hotline", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Link Facebook", name: "facebook", widget: "string"}
+          - {label: "Địa chỉ Văn Phòng", name: "address_office", widget: "string"}
+          - {label: "Địa chỉ Nhà Máy", name: "address_factory", widget: "string"}
+          - {label: "Mô tả ở chân trang", name: "footer_desc", widget: "text"}
+      - label: "Trang Chủ"
+        name: "home"
+        file: "src/index.html"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - label: "Banner Chính (Hero Section)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Tiêu đề lớn", name: "title", widget: "string"}
+              - {label: "Tiêu đề phụ", name: "subtitle", widget: "string"}
+              - {label: "Đoạn văn mô tả", name: "description", widget: "text"}
+              - {label: "Chữ trên nút bấm", name: "button_text", widget: "string"}
+              - {label: "Đường dẫn nút bấm", name: "button_link", widget: "string"}
+          - label: "Vì sao chọn Green Box"
+            name: "features"
+            widget: "object"
+            fields:
+              - {label: "Tiêu đề", name: "title", widget: "string"}
+              - {label: "Mô tả", name: "subtitle", widget: "text"}
+              - label: "Các lý do"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Tiêu đề lý do", name: "title", widget: "string"}
+                  - {label: "Icon (Mã FontAwesome, vd: fas fa-truck)", name: "icon", widget: "string"}
+          - label: "Thông tin Nhà Máy"
+            name: "factory"
+            widget: "object"
+            fields:
+              - {label: "Tiêu đề", name: "title", widget: "string"}
+              - {label: "Mô tả", name: "subtitle", widget: "text"}
+              - label: "Các chỉ số"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - {label: "Con số (vd: 5000+)", name: "value", widget: "string"}
+                  - {label: "Đơn vị/Ý nghĩa (vd: m2 Quy mô)", name: "label", widget: "string"}
+          - label: "Quy trình hợp tác"
+            name: "process"
+            widget: "object"
+            fields:
+              - {label: "Tiêu đề", name: "title", widget: "string"}
+              - label: "Các bước"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - {label: "Tên bước", name: "title", widget: "string"}
+                  - {label: "Mô tả", name: "desc", widget: "string"}
+          - label: "Sản phẩm nổi bật"
+            name: "products"
+            widget: "object"
+            fields:
+              - {label: "Tiêu đề", name: "title", widget: "string"}
+              - {label: "Mô tả", name: "subtitle", widget: "string"}
+              - label: "Danh sách sản phẩm"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Tên sản phẩm", name: "name", widget: "string"}
+                  - {label: "Mô tả ngắn", name: "desc", widget: "string"}
+                  - {label: "Ảnh sản phẩm", name: "image", widget: "image"}
+      - label: "Giới Thiệu"
+        name: "about"
+        file: "src/about.html"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Tiêu đề chính", name: "title", widget: "string"}
+          - {label: "Mô tả phụ", name: "subtitle", widget: "string"}
+          - {label: "Nội dung Tầm Nhìn", name: "tam_nhin", widget: "text"}
+          - {label: "Nội dung Sứ Mệnh", name: "su_menh", widget: "text"}
+          - {label: "Ảnh Tầm Nhìn", name: "tam_nhin_img", widget: "image"}
+          - {label: "Mô tả Đội ngũ", name: "doi_ngu_desc", widget: "text"}
+          - label: "Danh sách Đội ngũ"
+            name: "doi_ngu"
+            widget: "list"
+            fields:
+              - {label: "Tên", name: "name", widget: "string"}
+              - {label: "Chức vụ", name: "title", widget: "string"}
+              - {label: "Mô tả", name: "desc", widget: "text"}
+              - {label: "Ảnh đại diện", name: "image", widget: "image"}
+          - {label: "Mô tả Hệ thống Máy móc", name: "may_moc_desc", widget: "text"}
+          - label: "Danh sách Máy móc"
+            name: "may_moc"
+            widget: "list"
+            fields:
+              - {label: "Tên máy", name: "title", widget: "string"}
+              - {label: "Ảnh máy", name: "image", widget: "image"}
+      - label: "Báo Giá"
+        name: "pricing"
+        file: "src/pricing.html"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Tiêu đề chính", name: "title", widget: "string"}
+          - {label: "Mô tả phụ", name: "subtitle", widget: "string"}
+          - label: "Danh sách Bảng giá"
+            name: "pricing_tables"
+            widget: "list"
+            fields:
+              - {label: "Tên bảng (VD: 1. BÁO GIÁ...)", name: "name", widget: "string"}
+              - {label: "Mô tả quy cách", name: "desc", widget: "text"}
+              - label: "Các mức giá"
+                name: "rows"
+                widget: "list"
+                fields:
+                  - {label: "Số lượng (VD: Từ 500 hộp)", name: "qty", widget: "string"}
+                  - {label: "Đơn giá (VD: 45.000đ)", name: "price", widget: "string", required: false}
+                  - {label: "Ghi chú", name: "note", widget: "string", required: false}
+                  - {label: "Là Best Seller?", name: "is_best_seller", widget: "boolean", default: false, required: false}
+                  - {label: "Liên hệ VIP?", name: "is_vip", widget: "boolean", default: false, required: false}
+      - label: "Liên Hệ"
+        name: "contact"
+        file: "src/contact.html"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Tiêu đề chính", name: "title", widget: "string"}
+          - {label: "Mô tả phụ", name: "subtitle", widget: "string"}
+          - {label: "Địa chỉ", name: "address", widget: "string"}
+          - {label: "Hotline", name: "hotline", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          
+
+  - name: "news"
+    label: "Tin Tức"
+    folder: "src/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Tiêu đề bài viết", name: "title", widget: "string"}
+      - {label: "Tác giả", name: "author", widget: "string", default: "Admin"}
+      - {label: "Ngày đăng", name: "date", widget: "datetime"}
+      - {label: "Nội dung bài viết", name: "body", widget: "markdown"}
+
+  - name: "services"
+    label: "Dịch Vụ In Ấn"
+    folder: "src/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Tiêu đề trang (H1)", name: "title", widget: "string"}
+      - {label: "Mô tả trang", name: "subtitle", widget: "string"}
+      - label: "Các hạng mục dịch vụ"
+        name: "sections"
+        widget: "list"
+        fields:
+          - {label: "Tên hạng mục", name: "title", widget: "string"}
+          - {label: "Mô tả chi tiết", name: "desc", widget: "text"}
+          - {label: "Ảnh minh họa", name: "image", widget: "image"}
+
+  - name: "designs"
+    label: "Dịch Vụ Thiết Kế"
+    folder: "src/designs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Tiêu đề trang (H1)", name: "title", widget: "string"}
+      - {label: "Mô tả trang", name: "subtitle", widget: "string"}
+      - {label: "Ảnh nền Hero (URL)", name: "hero_bg", widget: "image", required: false}
+      - label: "Các khối nội dung"
+        name: "sections"
+        widget: "list"
+        fields:
+          - {label: "Tiêu đề khối", name: "title", widget: "string"}
+          - {label: "Mô tả chi tiết", name: "desc", widget: "markdown"}
+          - {label: "Ảnh minh họa", name: "image", widget: "image"}
+      - label: "Quy Trình Sáng Tạo"
+        name: "workflows"
+        widget: "list"
+        fields:
+          - {label: "Tên bước", name: "title", widget: "string"}
+          - {label: "Mô tả bước", name: "desc", widget: "string"}
+  - name: "careers"
+    label: "Tuyển Dụng"
+    folder: "src/careers"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Vị trí tuyển dụng", name: "title", widget: "string"}
+      - {label: "Chi tiết JD (Mô tả, Yêu cầu, Quyền lợi)", name: "body", widget: "markdown"}
