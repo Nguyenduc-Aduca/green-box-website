@@ -159,12 +159,15 @@ products:
 
     <!-- SECTION 5: SẢN PHẨM NỔI BẬT -->
     <style>
-        .products-section-home { padding: 5rem 0; background: #eef2f5; }
+        .products-section-home { 
+            padding: 5rem 0; 
+            background: #f4f7f6; /* Light gray background like screenshot */
+        }
         
         .products-page-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 25px;
             align-items: stretch;
             width: 100%;
         }
@@ -174,32 +177,38 @@ products:
             .products-page-grid { grid-template-columns: repeat(3, 1fr); }
         }
         @media (max-width: 767px) {
-            .products-page-grid { grid-template-columns: repeat(2, 1fr); }
+            .products-page-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        }
+        @media (max-width: 480px) {
+            .products-page-grid { grid-template-columns: 1fr; }
         }
         
         .product-card-home {
-            position: relative;
-            background: #fff;
-            border-radius: 8px;
+            background: #ffffff;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
             text-decoration: none;
             cursor: pointer;
-            width: 100%;
+            border: 1px solid #eaeaea;
+            height: 100%; /* Ensure equal heights */
         }
         
         .product-card-home:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+            border-color: #d1d1d1;
         }
         
         .product-img-wrapper {
             width: 100%;
-            padding-top: 100%; /* Perfect 1:1 Square */
+            padding-top: 66.66%; /* Landscape 3:2 ratio */
             position: relative;
-            background-color: #e9ecef; 
+            background-color: #f0f0f0; 
+            border-bottom: 1px solid #f0f0f0;
         }
         
         .product-img-wrapper img {
@@ -213,43 +222,56 @@ products:
         }
         
         .product-card-home:hover .product-img-wrapper img {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         
-        .product-info-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.6); 
-            padding: 12px 10px;
+        .product-info-box {
+            padding: 20px 15px;
             text-align: center;
-            backdrop-filter: blur(2px);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Pushes content down to equal heights */
+            background: white;
         }
         
-        .product-info-overlay h3 {
+        .product-info-box h3 {
             font-size: 1.05rem;
-            color: white;
-            margin: 0;
-            font-weight: 600;
+            color: #234c9c; /* Blue color similar to screenshot */
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            line-height: 1.4;
             display: -webkit-box;
-            -webkit-line-clamp: 1; 
+            -webkit-line-clamp: 2; /* Max 2 lines */
             -webkit-box-orient: vertical;
             overflow: hidden;
+            height: 2.94rem; /* Fixed height for 2 lines */
+        }
+        
+        .product-info-box p {
+            font-size: 0.9rem;
+            color: #666666;
+            line-height: 1.5;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Max 2 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 3rem; /* Fixed height for 2 lines */
         }
     </style>
     
     <section class="products-section-home">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: 2rem;">SẢN PHẨM NỔI BẬT</h2>
+            <h2 class="section-title" style="margin-bottom: 2.5rem;">{{ products.title }}</h2>
             <div class="products-page-grid">
                 {% for item in products.items %}
                 <div class="product-card-home">
                     <div class="product-img-wrapper">
                         <img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589417933932-d6fc67f4740e?w=500&q=80'">
                     </div>
-                    <div class="product-info-overlay">
+                    <div class="product-info-box">
                         <h3>{{ item.name }}</h3>
+                        <p>{{ item.desc }}</p>
                     </div>
                 </div>
                 {% endfor %}
