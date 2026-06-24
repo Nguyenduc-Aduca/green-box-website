@@ -20,6 +20,6 @@ sections:
     title: TÚI GIẤY THỰC PHẨM
   - desc: Túi giấy đựng tài liệu hội thảo, sự kiện Event. Thiết kế chuẩn Form A4,
       dập nổi logo doanh nghiệp, tạo uy tín với nhà đầu tư.
-    image: https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80
+    image: /assets/uploads/tui-doanh-nghiệp.png
     title: TÚI GIẤY DOANH NGHIỆP
 ---
