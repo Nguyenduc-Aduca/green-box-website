@@ -30,7 +30,7 @@ sections:
       thảo đạt chuẩn vệ sinh an toàn.Khay lót: Khay bọc lụa vàng, khay nhung đỏ
       sang trọng.Kết cấu: Vững chắc, bảo vệ hũ thủy tinh tuyệt đối.Quy chuẩn:
       Mực in không độc hại, thân thiện môi trường."
-    image: /assets/uploads/hop-banh-trung-thu.png
+    image: /assets/uploads/hop-yen-xao.png
     title: HỘP THỰC PHẨM CHỨC NĂNG / YẾN SÀO
   - desc: 'Kiểu dáng hộp được ưa chuộng bậc nhất hiện nay nhờ trải nghiệm mở hộp
       (unboxing) vô cùng mượt mà. Lực hút nam châm êm ái tạo cảm giác cực kỳ xa
