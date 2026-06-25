@@ -15,7 +15,7 @@ sections:
                               *  Sáng tạo đột phá
                               *  Chuẩn hóa kỹ thuật in
                               *  Tăng tỷ lệ chuyển đổi bán hàng
-    image: https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80
+    image: /assets/uploads/bo-nhan-dien-thuong-hieu.png
     title: Tại sao nhận diện thương hiệu quan trọng?
   - desc: Chúng tôi không chỉ giao cho bạn một chiếc Logo. Chúng tôi cung cấp một
       cuốn Brand Guidelines chi tiết, hướng dẫn cách sử dụng logo trên nền màu
