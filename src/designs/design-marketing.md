@@ -14,14 +14,14 @@ sections:
                               *  Sáng tạo đột phá
                               *  Chuẩn hóa kỹ thuật in
                               *  Tăng tỷ lệ chuyển đổi bán hàng
-    image: /assets/uploads/mo-hình.png
+    image: /assets/uploads/ấn-phẩm-marketing.png
     title: Truyền tải thông điệp mạnh mẽ
   - desc: Từ những tờ rơi (Flyer), thẻ tích điểm (Loyalty card), cho đến kẹp tài
       liệu (Folder) và phong bì thư. Chúng tôi giúp bạn chuẩn hóa toàn bộ các
       điểm chạm vật lý với khách hàng. Mọi ấn phẩm marketing đều được thiết kế
       trên nguyên tắc bám sát Brand Guidelines, tạo ra một trải nghiệm thương
       hiệu xuyên suốt và vô cùng chuyên nghiệp.
-    image: /assets/uploads/nhan-dien-thuong-hiẹu.png
+    image: /assets/uploads/truyen-thong.png
     title: Đồng bộ hóa các điểm chạm
 workflows:
   - desc: Định vị thương hiệu và phân tích chân dung khách hàng mục tiêu.
