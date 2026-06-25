@@ -22,7 +22,7 @@ sections:
       sáng/tối, quy định font chữ, tỷ lệ an toàn. Điều này cực kỳ quan trọng khi
       bạn mang thương hiệu đi in ấn bao bì sau này, đảm bảo màu sắc luôn chuẩn
       xác và không bị lệch tông trên các chất liệu giấy khác nhau.
-    image: https://images.unsplash.com/photo-1542744094-24638ea095b5?auto=format&fit=crop&w=800&q=80
+    image: /assets/uploads/nhan-dien-thuong-hiẹu.png
     title: Bộ Brand Guidelines chuyên nghiệp
 workflows:
   - desc: Định vị thương hiệu và phân tích chân dung khách hàng mục tiêu.
